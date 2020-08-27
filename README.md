@@ -2,4 +2,4 @@
 Musclery TrainingsJournal - Frontend
 
 ## Frontend-Team:
-Julie Pines, Dennis Neumann
+Julie Pines, Dennis Neumann, Tobias Lorenz
