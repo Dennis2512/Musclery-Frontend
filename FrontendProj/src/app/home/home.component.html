@@ -1,18 +1,26 @@
 <ActionBar>
-    <!--
+  <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!--
+  <NavigationButton
+    ios:visibility="collapsed"
+    icon="res://menu"
+    (tap)="onDrawerButtonTap()"
+  ></NavigationButton>
+  <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label text="Home"></Label>
+  <ActionItem
+    icon="res://menu"
+    android:visibility="collapsed"
+    (tap)="onDrawerButtonTap()"
+    ios.position="left"
+  >
+  </ActionItem>
+  <Label text="Home"></Label>
 </ActionBar>
 
 <!-- <GridLayout class="page__content">
@@ -22,7 +30,42 @@
    </StackLayout>
 </GridLayout> -->
 
-<FlexboxLayout flexDirection="column">
-    <Label class="tile" text="hello this is tile one" [nsRouterLink]="['/search']" pageTransition="fade"></Label>
-    <Label class="tile" text="hello this is tile two" ></Label>
-</FlexboxLayout>
+<ScrollView orientation="vertical">
+  <FlexboxLayout flexDirection="column">
+    <Label
+      class="tile"
+      id="workoutlog"
+      text="Log your Workout"
+      [nsRouterLink]="['/workoutlog']"
+      pageTransition="fade"
+    ></Label>
+    <Label
+      id="caloriecalc"
+      class="tile"
+      text="Calculate your Calorie intake"
+      [nsRouterLink]="['/caloriecounter']"
+      pageTransition="fade"
+    ></Label>
+    <Label
+      id="featured"
+      class="tile"
+      text="Suggested Workouts"
+      [nsRouterLink]="['/featured']"
+      pageTransition="fade"
+    ></Label>
+    <Label
+      id="search"
+      class="tile"
+      text="Search for something specific"
+      [nsRouterLink]="['/search']"
+      pageTransition="fade"
+    ></Label>
+    <Label
+      class="tile"
+      id="setting"
+      text="Change Settings"
+      [nsRouterLink]="['/settings']"
+      pageTransition="fade"
+    ></Label>
+  </FlexboxLayout>
+</ScrollView>
