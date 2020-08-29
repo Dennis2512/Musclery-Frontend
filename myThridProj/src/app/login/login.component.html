@@ -1,0 +1,49 @@
+<ActionBar>
+    <!--
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!--
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="Login"></Label>
+</ActionBar>
+
+
+<FlexboxLayout class="page">
+
+    <StackLayout class="form">
+
+        <StackLayout class="input-field">
+            <TextField class="input" hint="Email" keyboardType="email" autocorrect="true" autocapitalize="no"></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+            <TextField class="input" hint="Password" secure="true" ></TextField>
+        </StackLayout>
+
+        <StackLayout *ngIf="!isLoggingIn" class="input-field">
+            <TextField class="input" hint="Confirm password" secure="true"></TextField>
+        </StackLayout>
+
+        <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()"></Button>
+        <Label id="forgotPw" *ngIf="isLoggingIn" text="Forgot your password?"></Label>
+
+    </StackLayout>
+
+    <Label (tap)="toggleForm()">
+        <FormattedString>
+          <Span [text]="isLoggingIn ? 'Don’t have an account? ' : 'Back to Login'"></Span>
+          <Span [text]="isLoggingIn ? 'Sign up' : ''" class="bold"></Span>
+        </FormattedString>
+    </Label>
+
+
+</FlexboxLayout>
+
