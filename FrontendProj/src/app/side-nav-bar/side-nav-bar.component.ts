@@ -10,10 +10,10 @@ import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
 //this is a comment
 @Component({
-    selector: "ns-app",
-    templateUrl: "app.component.html",
+    selector: "sideNavBar",
+    templateUrl: "side-nav-bar.component.html",
 })
-export class AppComponent implements OnInit {
+export class SideNavBarComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
 

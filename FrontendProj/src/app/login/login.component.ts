@@ -2,23 +2,37 @@ import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { alert, prompt } from "tns-core-modules/ui/dialogs";
+import * as firebase from "nativescript-plugin-firebase";
 
 @Component({
     selector: "Login",
     templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.css"]
+    styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
     isLoggingIn = true;
 
-    toggleForm(){
+    toggleForm() {
         this.isLoggingIn = !this.isLoggingIn;
     }
-    submit(){
-        if(this.isLoggingIn){
+    async submit() {
+        console.log("hello world");
+        if (this.isLoggingIn) {
             //perform Login
-        }else{
+            const options: firebase.LoginOptions = {
+                type: firebase.LoginType.PASSWORD,
+                passwordOptions: {
+                    email: "lukas_blank@outlook.de",
+                    password: "passwort",
+                },
+            };
+            const user: firebase.User = await firebase.login(options);
+            console.log("Email: " + user.email);
+            const token = await user.getIdToken();
+            console.log("Token: " + token);
+        } else {
             //perform registration
+            console.log("fail");
         }
     }
     constructor() {
@@ -39,19 +53,21 @@ export class LoginComponent implements OnInit {
     forgotPassword() {
         prompt({
             title: "Forgot Password",
-            message: "Enter the email address you used to register for Musclery to reset your password.",
+            message:
+                "Enter the email address you used to register for Musclery to reset your password.",
             defaultText: "",
             okButtonText: "Ok",
-            cancelButtonText: "Cancel"
+            cancelButtonText: "Cancel",
         }).then((data) => {
             if (data.result) {
-      // Call the backend to reset the password
+                // Call the backend to reset the password
                 alert({
                     title: "Musclery",
-                    message: "Your password was successfully reset. Please check your email for instructions on choosing a new password.",
-                    okButtonText: "Ok"
-                })
+                    message:
+                        "Your password was successfully reset. Please check your email for instructions on choosing a new password.",
+                    okButtonText: "Ok",
+                });
+            }
+        });
     }
-  });
-}
 }

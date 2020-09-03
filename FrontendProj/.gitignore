@@ -3,6 +3,10 @@ hooks/
 node_modules/
 platforms/
 
+# Firebase
+./Android/google-services.json
+./iOS/GoogleService-Info.plist
+
 # NativeScript Template
 *.js.map
 *.js

@@ -5,20 +5,23 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+import * as firebase from "nativescript-plugin-firebase";
+
+//firebase = require("nativescript-plugin-firebase");
+
+firebase
+    .init()
+    .then(() => console.log("--- Firebase Connection Success ---"))
+    .catch((e) => console.log("--- ERROR: " + e));
+
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
+    bootstrap: [AppComponent],
     imports: [
         AppRoutingModule,
         NativeScriptModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
     ],
-    declarations: [
-        AppComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    declarations: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
