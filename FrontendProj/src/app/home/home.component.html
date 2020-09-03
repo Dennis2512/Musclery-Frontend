@@ -32,40 +32,53 @@
 
 <ScrollView orientation="vertical">
   <FlexboxLayout flexDirection="column">
-    <Label
-      class="tile"
-      id="workoutlog"
-      text="Log your Workout"
-      [nsRouterLink]="['/workoutlog']"
-      pageTransition="fade"
-    ></Label>
-    <Label
-      id="caloriecalc"
-      class="tile"
-      text="Calculate your Calorie intake"
-      [nsRouterLink]="['/caloriecounter']"
-      pageTransition="fade"
-    ></Label>
-    <Label
-      id="featured"
-      class="tile"
-      text="Suggested Workouts"
-      [nsRouterLink]="['/featured']"
-      pageTransition="fade"
-    ></Label>
-    <Label
-      id="search"
-      class="tile"
-      text="Search for something specific"
-      [nsRouterLink]="['/search']"
-      pageTransition="fade"
-    ></Label>
-    <Label
-      class="tile"
-      id="setting"
-      text="Change Settings"
-      [nsRouterLink]="['/settings']"
-      pageTransition="fade"
-    ></Label>
+    <FlexboxLayout class="tileBox" id="workoutlog">
+      <Label
+        text="Log your Workout"
+        [nsRouterLink]="['/workoutlog']"
+        pageTransition="fade"
+      ></Label>
+    </FlexboxLayout>
+
+    <FlexboxLayout class="space"></FlexboxLayout>
+
+    <FlexboxLayout class="tileBox" id="caloriecalc">
+      <Label
+        text="Calculate your Calorie intake"
+        [nsRouterLink]="['/caloriecounter']"
+        pageTransition="fade"
+      ></Label
+    ></FlexboxLayout>
+
+    <FlexboxLayout class="space"></FlexboxLayout>
+
+    <FlexboxLayout class="tileBox" id="featured">
+      <Label
+        text="Suggested Workouts"
+        [nsRouterLink]="['/featured']"
+        pageTransition="fade"
+      ></Label
+    ></FlexboxLayout>
+
+    <FlexboxLayout class="space"></FlexboxLayout>
+
+    <FlexboxLayout class="tileBox" id="search">
+      <Label
+        text="Search for something specific"
+        [nsRouterLink]="['/search']"
+        pageTransition="fade"
+      ></Label
+    ></FlexboxLayout>
+
+    <FlexboxLayout class="space"></FlexboxLayout>
+
+    <FlexboxLayout class="tileBox" id="setting">
+      <Label
+        text="Change Settings"
+        [nsRouterLink]="['/settings']"
+        pageTra
+        nsition="fade"
+      ></Label
+    ></FlexboxLayout>
   </FlexboxLayout>
 </ScrollView>

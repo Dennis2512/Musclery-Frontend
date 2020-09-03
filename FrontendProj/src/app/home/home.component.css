@@ -1,17 +1,23 @@
-.tile {
-  margin: 20px;
-  width: 90%;
-  height: 170;
-  text-align: center;
-  font-size: 20vh;
-  border-radius: 25px;
-  align-self: center;
-  vertical-align: middle;
+/*Label, auf dem Homescreen, die auf die einzelnen Seiten verlinken*/
+.space {
+  height: 20;
 }
 
+/*Flexboxlayout, das die einzelnen Labels in einer Flexbox einkesselt*/
+.tileBox {
+  margin: 2% !important;
+  width: 96%;
+  height: 170;
+  font-size: 20vh;
+  border-radius: 25px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+/*Einzlne Label; Zum Hintergrund festlegen und individualisieren.*/
 #workoutlog {
   background-color: antiquewhite;
-  background-image: url("./img/workoutlog.jpeg");
   background-blend-mode: normal;
 }
 
