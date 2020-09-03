@@ -4,9 +4,8 @@ node_modules/
 platforms/
 
 # Firebase
-./Android/google-services.json
-./iOS/GoogleService-Info.plist
-
+App_Resources/Android/google-services.json
+App_Resources/iOS/GoogleService-Info.plist
 # NativeScript Template
 *.js.map
 *.js
