@@ -5,7 +5,10 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+import { HttpClientModule } from "@angular/common/http";
+
 import * as firebase from "nativescript-plugin-firebase";
+import { NativeScriptHttpClientModule } from "nativescript-angular";
 
 //firebase = require("nativescript-plugin-firebase");
 
@@ -20,6 +23,7 @@ firebase
         AppRoutingModule,
         NativeScriptModule,
         NativeScriptUISideDrawerModule,
+        NativeScriptHttpClientModule,
     ],
     declarations: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA],

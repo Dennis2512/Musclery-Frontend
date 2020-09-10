@@ -3,6 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { alert, prompt } from "tns-core-modules/ui/dialogs";
 import * as firebase from "nativescript-plugin-firebase";
+import { TrainingService } from "../services/training.service";
 
 @Component({
     selector: "Login",
@@ -11,6 +12,9 @@ import * as firebase from "nativescript-plugin-firebase";
 })
 export class LoginComponent implements OnInit {
     isLoggingIn = true;
+    constructor(private ts: TrainingService) {
+        // Use the component constructor to inject providers.
+    }
 
     toggleForm() {
         this.isLoggingIn = !this.isLoggingIn;
@@ -28,15 +32,12 @@ export class LoginComponent implements OnInit {
             };
             const user: firebase.User = await firebase.login(options);
             console.log("Email: " + user.email);
-            const token = await user.getIdToken();
-            console.log("Token: " + token);
+            //console.log("Token: " + token);
+            await this.ts.getWorkouts(await user.getIdToken());
         } else {
             //perform registration
             console.log("fail");
         }
-    }
-    constructor() {
-        // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
