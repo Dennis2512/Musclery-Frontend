@@ -40,6 +40,7 @@
     "codelyzer": "~4.5.0",
     "nativescript-dev-webpack": "~1.5.0",
     "node-sass": "^4.7.1",
+    "tns-android": "6.5.0",
     "tslint": "~5.19.0",
     "typescript": "~3.5.3"
   },
