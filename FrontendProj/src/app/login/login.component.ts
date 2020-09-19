@@ -4,6 +4,7 @@ import * as app from "tns-core-modules/application";
 import { alert, prompt } from "tns-core-modules/ui/dialogs";
 import * as firebase from "nativescript-plugin-firebase";
 import { TrainingService } from "../services/training.service";
+import { AuthService } from "../services/auth.service";
 
 @Component({
     selector: "Login",
@@ -12,7 +13,7 @@ import { TrainingService } from "../services/training.service";
 })
 export class LoginComponent implements OnInit {
     isLoggingIn = true;
-    constructor(private ts: TrainingService) {
+    constructor(private ts: TrainingService, private as: AuthService) {
         // Use the component constructor to inject providers.
     }
 
@@ -23,17 +24,7 @@ export class LoginComponent implements OnInit {
         console.log("hello world");
         if (this.isLoggingIn) {
             //perform Login
-            const options: firebase.LoginOptions = {
-                type: firebase.LoginType.PASSWORD,
-                passwordOptions: {
-                    email: "lukas_blank@outlook.de",
-                    password: "passwort",
-                },
-            };
-            const user: firebase.User = await firebase.login(options);
-            console.log("Email: " + user.email);
-            //console.log("Token: " + token);
-            await this.ts.getWorkouts(await user.getIdToken());
+            await this.as.login();
         } else {
             //perform registration
             console.log("fail");
