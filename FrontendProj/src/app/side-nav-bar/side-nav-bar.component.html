@@ -56,6 +56,16 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         <GridLayout
           columns="auto, *"
           class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/bmicalculator')"
+          (tap)="onNavItemTap('/bmicalculator')"
+        >
+          <Label col="0" text="&#xf1ec;" class="nt-icon fas"></Label>
+          <Label col="1" text="BMI Calculator" class="p-r-10"></Label>
+        </GridLayout>
+
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
           [class.-selected]="isComponentSelected('/search')"
           (tap)="onNavItemTap('/search')"
         >

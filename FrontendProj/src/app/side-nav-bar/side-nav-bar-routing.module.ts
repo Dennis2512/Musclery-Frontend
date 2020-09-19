@@ -47,6 +47,13 @@ const routes: Routes = [
                 (m) => m.CaloriecounterModule
             ),
     },
+    {
+        path: "bmicalculator",
+        loadChildren: () =>
+            import("~/app/bmicalculator/bmicalculator.module").then(
+                (m) => m.BmicalculatorModule
+            ),
+    },
 ];
 
 @NgModule({
