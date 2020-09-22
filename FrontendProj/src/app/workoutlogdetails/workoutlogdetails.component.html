@@ -28,10 +28,10 @@
 
 <StackLayout style="color: black">
   <Label
-    *ngFor="let workout of data"
-    [text]="workout.getName()!=undefined?workout.getName():workout.getDateString()"
-    (tap)="onClick(workout)"
+    text = "hello"
   ></Label>
 
-  <Button text="Add Workout" (tap)="addWorkout()"></Button>
+  <Button text="Add Exercize" ></Button>
+  <Button text="Save" ></Button>
+  
 </StackLayout>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { AuthService } from "../services/auth.service";
@@ -11,7 +12,7 @@ import { TrainingService } from "../services/training.service";
 export class WorkoutlogComponent implements OnInit {
     public data: any[] = [];
 
-    constructor(private ts: TrainingService, private as: AuthService) {
+    constructor(private ts: TrainingService, private as: AuthService, private router: RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 
@@ -29,6 +30,8 @@ export class WorkoutlogComponent implements OnInit {
 
     onClick(workout: any): void {
         console.log(workout); 
+        this.router.navigateByUrl("details");
+        
     }
     
 

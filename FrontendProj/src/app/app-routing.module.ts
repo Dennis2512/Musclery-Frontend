@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { WorkoutlogDetailsComponent } from "./workoutlogdetails/workoutlogdetails.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -54,6 +55,8 @@ const routes: Routes = [
                 (m) => m.BmicalculatorModule
             ),
     },
+    {path: "details", component: WorkoutlogDetailsComponent
+}
 ];
 
 @NgModule({
