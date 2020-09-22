@@ -26,6 +26,7 @@ export class Training {
 
     public setDate(date: Date): void {
         this.date = date;
+        
     }
 
     public setExercises(exercises: Exercise[]): void {
@@ -60,5 +61,9 @@ export class Training {
 
     public getExercises(): Exercise[] {
         return this.exercises;
+    }
+
+    public getDateString(): string{
+        return this.date.toString();
     }
 }

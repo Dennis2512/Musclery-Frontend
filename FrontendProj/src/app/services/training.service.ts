@@ -19,16 +19,20 @@ export class TrainingService {
         //Promise in Training geparst
         const workouts: Training[] = [];
         res.data.forEach((element) => {
+
+            console.log(element.date);
+
             workouts.push(
                 new Training(
                     element.id,
                     element.name,
-                    element.date,
+                    new Date(element.date._seconds*1000),
                     element.exercises
                 )
+ 
             );
         });
-        console.log("RESPONSE: " + res);
+        console.log("RESPONSE: " + workouts[0].getDateString() + "");
         console.log("WORKOUTS: " + workouts);
         return workouts;
     }
@@ -41,12 +45,14 @@ export class TrainingService {
             .post(
                 "https://europe-west2-muclery6669.cloudfunctions.net/training",
                 {
-                    id: null,
-                    training: new Training(), //später echtes Training
                 },
                 { headers: { ["authorization"]: "Bearer " + token } }
             )
             .toPromise();
+
+            console.log(res);
+            const temp = new Date(res.data.date._seconds*1000);
+            return new Training(res.id, res.data.name, temp, res.data.exercises);
     }
 
     //what update workout should do:

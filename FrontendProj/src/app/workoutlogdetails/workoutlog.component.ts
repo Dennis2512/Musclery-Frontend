@@ -6,9 +6,9 @@ import { TrainingService } from "../services/training.service";
 
 @Component({
     selector: "Workoutlog",
-    templateUrl: "./workoutlog.component.html",
+    templateUrl: "./workoutlogdetails.component.html",
 })
-export class WorkoutlogComponent implements OnInit {
+export class WorkoutlogDetailsComponent implements OnInit {
     public data: any[] = [];
 
     constructor(private ts: TrainingService, private as: AuthService) {
