@@ -20,12 +20,53 @@
       ios.position="left"
     >
     </ActionItem>
-    <Label text="Bmicalculator"></Label>
+    <Label text="Bmi Calculator"></Label>
   </ActionBar>
-  
+
+  <GridLayout columns = "*,*" rows = "auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto , auto, auto" class = "m-15" >
+    <Label text = "Body Height: " row = "0" col = "0"  class = "labelHeadersBmi" > </Label>
+    <Label text = "Body Weight:" row = "1" col = "0"  class = "labelHeadersBmi"></Label>
+    <Label text = "Gender:" row = "2" col = "0"   class = "labelHeadersBmi"></Label>
+    <Label  text = "Age:" row = "3" col = "0"   class = "labelHeadersBmi"></Label>
+    <Button id = "editInSettings"text="Edit in Settings" row ="4" col = "0" (tap)="editInSettings()"  colSpan = "1" class = "-rounded-lg"></Button>
+    
+    <Label id = "resultsLine"text = "BMI Value:" row = "5" col = "0"  class = "labelHeadersBmi"></Label>
+    <Label text = " 187 cm" row = "0" col = "1" class = "resultValuesBmi" ></Label>
+    <Label text = "75 kg" row = "1" col = "1"  class= "resultValuesBmi"></Label>
+    <Label text = "male" row = "2" col = "1"  class = "resultValuesBmi"></Label>
+    <Label text = "25 years" row = "3" col = "1" class = "resultValuesBmi"></Label>
+    <Label id = "resultsLine"text = "21" row = "5" col = "1"  class = "resultValuesBmi"></Label>
+    
+    <GridLayout columns = "*, *, *" rows = "auto, auto, auto, auto, auto, auto, auto, auto" row = "6" col = "0" colSpan = "2" rowSpan = "8">
+      <Label text = "BMI Table Normal Weight" row = "0" col = "0" colSpan = "3" rowSpan = "1" class = "tableHeader" ></Label>
+      <Label text = "Age" row = "1" col = "0" colSpan = "1" rowSpan = "1" class = "secondTableHeaders"></Label>
+      <Label text = "Man" row = "1" col = "1" colSpan = "1" rowSpan = "1" class = "secondTableHeaders"></Label>
+      <Label text = "Woman" row = "1" col = "2" colSpan = "1" rowSpan = "1" class = "secondTableHeaders"></Label>
+      <Label text = "19-24" row = "2" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "25-29,9" row = "2" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "24-28,9" row = "2" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "25-34" row = "3" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "26-30,9" row = "3" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "25-29,9" row = "3" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "35-44" row = "4" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "27-30,9" row = "4" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "26-30,9" row = "4" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "45-54" row = "5" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "27-30,9" row = "5" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "26-30,9" row = "5" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "55-64" row = "6" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "27-30,9" row = "6" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "26-30,9" row = "6" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "Above 64" row = "7" col = "0" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "27-30,9" row = "7" col = "1" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      <Label text = "26-30,9" row = "7" col = "2" colSpan = "1" rowSpan = "1" class = "tableValues"></Label>
+      
+  </GridLayout>
+
+  </GridLayout>
   <StackLayout style="color: black">
     <!--
     <Label class="page__content-icon fas" text="&#xf1ec;"></Label>
    -->
-      <Button text="Edit in Settings" (tap)="editInSettings()"></Button>
+     <!--<Button text="Edit in Settings" (tap)="editInSettings()"></Button>--> 
   </StackLayout>

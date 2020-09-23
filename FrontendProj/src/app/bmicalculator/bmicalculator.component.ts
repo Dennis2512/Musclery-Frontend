@@ -6,6 +6,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 @Component({
     selector: "Bmicalculator",
     templateUrl: "./bmicalculator.component.html",
+    styleUrls: ["./bmicalculator.component.css"]
 })
 export class BmicalculatorComponent implements OnInit {
     constructor(private routerExtensions: RouterExtensions) {

@@ -1,0 +1,59 @@
+
+#editInSettings{
+    background-color: rgb(44, 233, 195);
+    color: white;
+    font-weight:700;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#resultsLine{
+    padding: 15 18;
+    border-color: rgb(196, 180, 246);
+    border-width: 2 0 0 0
+}
+
+.labelHeadersBmi{
+    font-weight: 700;
+    color: black;
+    vertical-align: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.resultValuesBmi{
+    vertical-align: center;
+    text-align: center;
+    color:rgb(123, 100, 229);
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.tableHeader{
+    vertical-align: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 1;
+    border-color: black;
+}
+
+.secondTableHeaders{
+    text-decoration: underline;
+    vertical-align: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 1;
+    border-color: black;
+}
+
+.tableValues{
+    vertical-align: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 1;
+    border-color: black;
+}
