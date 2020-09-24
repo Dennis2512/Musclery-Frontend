@@ -1,32 +1,49 @@
-<ActionBar>
-  <!--
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-    -->
-  <NavigationButton
-    ios:visibility="collapsed"
-    icon="res://menu"
-    (tap)="onDrawerButtonTap()"
-  ></NavigationButton>
-  <!--
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-  <ActionItem
-    icon="res://menu"
-    android:visibility="collapsed"
-    (tap)="onDrawerButtonTap()"
-    ios.position="left"
-  >
-  </ActionItem>
-  <Label text="Caloriecounter"></Label>
+<ActionBar title="Calories Counter">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu"
+        (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://menu" android:visibility="collapsed"
+        (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf1ec;"></Label>
-  <Label
-    class="page__content-placeholder"
-    text="<!-- Page content goes here -->"
-  ></Label>
-</GridLayout>
+<ScrollView orientation="vertical">
+    <!-- Main Grid, Columns = 1, Rows = 3 -->
+    <GridLayout columns="*" rows="auto, auto, auto" class="grid">
+        <!-- TextGrid, Columns = 2, Rows = 2 -->
+        <GridLayout col="0" row="0" columns="*, *" rows="auto, auto"
+            class="grid">
+            <Label text="Per Day:" col="0" row="0" class="staticText"></Label>
+            <Label text="2256 kcal" col="1" row="0" class="properties">
+            </Label>
+        </GridLayout>
+        <!-- ProgressGrid, Columns = 1, Rows = 1 -->
+        <GridLayout col="0" row="1" columns="*" rows="auto" class="grid">
+            <Progress value="25" maxValue="100" class="progress"></Progress>
+        </GridLayout>
+        <!-- ChartGrid, Columns = 2, Rows = 1 -->
+        <GridLayout col="0" row="2" columns="*, *" rows="auto">
+            <!-- Breakfast Chart -->
+            <GridLayout col="0" row="0" rows="*" height="1000px">
+                <RadCartesianChart row="0" style="font-size: 12;">
+                    <CategoricalAxis tkCartesianHorizontalAxis>
+                    </CategoricalAxis>
+                    <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                    <BarSeries tkCartesianSeries [items]="mealSource"
+                        categoryProperty="Meal" valueProperty="Amount">
+                    </BarSeries>
+                </RadCartesianChart>
+            </GridLayout>
+            <!-- Lunch Chart -->
+            <GridLayout col="1" row="0" rows="*" height="1000px">
+                <RadCartesianChart row="0" style="font-size: 12;">
+                    <CategoricalAxis tkCartesianHorizontalAxis>
+                    </CategoricalAxis>
+                    <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                    <BarSeries tkCartesianSeries [items]="weightSource"
+                        categoryProperty="Month" valueProperty="Amount">
+                    </BarSeries>
+                </RadCartesianChart>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</ScrollView>
