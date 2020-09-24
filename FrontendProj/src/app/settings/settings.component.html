@@ -1,21 +1,42 @@
-<ActionBar>
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-    -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+<ActionBar title="Settings">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu"
+        (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://menu" android:visibility="collapsed"
+        (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text="Settings"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf013;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView orientation="vertical">
+    <!-- GridLayout - Columns: 2, Rows: 8 -->
+    <GridLayout columns="*,*"
+        rows="auto, auto, auto, auto, auto, auto, auto, auto" class="grid">
+        <!-- Row 0 -->
+        <Label text="Language:" col="0" row="0" class="staticText"></Label>
+        <Label text="English" col="1" row="0" class="properties"></Label>
+        <!-- Row 1 -->
+        <Label text="Name:" col="0" row="1" class="staticText"></Label>
+        <Label text="Max Mustermann" col="1" row="1" class="properties">
+        </Label>
+        <!-- Row 2 -->
+        <Label text="Gender:" col="0" row="2" class="staticText"></Label>
+        <Label text="Male" col="1" row="2" class="properties"></Label>
+        <!-- Row 3 -->
+        <Label text="Age:" col="0" row="3" class="staticText"></Label>
+        <Label text="23 years" col="1" row="3" class="properties"></Label>
+        <!-- Row 4 -->
+        <Label text="Height:" col="0" row="4" class="staticText"></Label>
+        <Label text="178 cm" col="1" row="4" class="properties"></Label>
+        <!-- Row 5 -->
+        <Label text="Weight:" col="0" row="5" class="staticText"></Label>
+        <Label text="60 kg" col="1" row="5" class="properties"></Label>
+        <!-- Row 6 -->
+        <Label text="Calories Goal:" col="0" row="6" class="staticText">
+        </Label>
+        <Label text="2256 kcal" col="1" row="6" class="properties"></Label>
+        <!-- Row 7 -->
+        <Label text="Activity Level:" col="0" row="7" class="staticText">
+        </Label>
+        <Label text="Not that active" col="1" row="7" class="properties">
+        </Label>
+    </GridLayout>
+</ScrollView>
