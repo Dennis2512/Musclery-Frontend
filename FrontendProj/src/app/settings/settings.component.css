@@ -1,0 +1,32 @@
+.staticText{
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+    height: 40;
+    background-color: red; 
+    vertical-align: center;
+    text-align: center;
+    margin: 5;
+}
+
+.properties{
+    font-weight: 700;
+    font-size: 16px;
+    color: lightseagreen;
+    height: 40;
+    vertical-align: center;
+    text-align: center;
+    margin: 5;
+}
+
+.editText{
+    font-weight: 700;
+    height: 40;
+    padding-top: auto;
+    padding-bottom: auto;
+    font-size: 16;
+}
+
+.grid{
+    margin-top: 20;
+}
