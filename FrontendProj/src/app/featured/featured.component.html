@@ -1,3 +1,4 @@
+
 <ActionBar>
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
@@ -15,7 +16,55 @@
     <Label text="Featured"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf005;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<ScrollView orientation="vertical">
+    <FlexboxLayout flexDirection="column">
+      <FlexboxLayout class="tileBox" id="legpressRecommendation">
+          <GridLayout rows = "auto, auto, auto, auto, auto" columns = "*, *">
+        <Label text="Training Exercise:" pageTransition = "fade" row = "0" col = "0" class = "headers"></Label>
+        <Label text="Training Type:" pageTransition = "fade" row = "1" col = "0" class = "headers"></Label>
+        <Label text="Number of Sets:" pageTransition = "fade" row = "2" col = "0" class = "headers"></Label>
+        <Label text="Number of Repetitions:" pageTransition = "fade" row = "3" col = "0" class = "headers"></Label>
+        <Label text="Muscles:" pageTransition = "fade" row = "4" col = "0" class = "headers"></Label>
+        <Label text="Lep Press" pageTransition = "fade" row = "0" col = "1" class = "values"></Label>
+        <Label text="Strength" pageTransition = "fade" row = "1" col = "1" class = "values"></Label>
+        <Label text="3" pageTransition = "fade" row = "2" col = "1" class = "values"></Label>
+        <Label text="15" pageTransition = "fade" row = "3" col = "1" class = "values"></Label>
+        <Label text="Leg Biceps" pageTransition = "fade" row = "4" col = "1" class = "values"></Label>
+        </GridLayout>
+      </FlexboxLayout>
+  
+      <FlexboxLayout class="space"></FlexboxLayout>
+  
+      <FlexboxLayout class="tileBox" id="pushupsRecommendation">
+        <GridLayout rows = "auto, auto, auto, auto, auto" columns = "*, *">
+            <Label text="Training Exercise:" pageTransition = "fade" row = "0" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Training Type:" pageTransition = "fade" row = "1" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Number of Sets:" pageTransition = "fade" row = "2" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Number of Repetitions:" pageTransition = "fade" row = "3" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Muscles:" pageTransition = "fade" row = "4" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Pushups" pageTransition = "fade" row = "0" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="Strength" pageTransition = "fade" row = "1" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="3" pageTransition = "fade" row = "2" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="15" pageTransition = "fade" row = "3" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="Breast, Triceps, Shoulder" pageTransition = "fade" row = "4" col = "1" class = "values" textWrap = "true"></Label>
+            </GridLayout>
+      ></FlexboxLayout>
+  
+      <FlexboxLayout class="space"></FlexboxLayout>
+  
+      <FlexboxLayout class="tileBox" id="treadmillRecommendation">
+        <GridLayout rows = "auto, auto, auto, auto, auto" columns = "*, *">
+            <Label text="Training Exercise:" pageTransition = "fade" row = "0" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Training Type:" pageTransition = "fade" row = "1" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Number of Sets:" pageTransition = "fade" row = "2" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Duration:" pageTransition = "fade" row = "3" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Muscles:" pageTransition = "fade" row = "4" col = "0" class = "headers" textWrap = "true"></Label>
+            <Label text="Treadmill" pageTransition = "fade" row = "0" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="Endurance" pageTransition = "fade" row = "1" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="3" pageTransition = "fade" row = "2" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="5 minutes" pageTransition = "fade" row = "3" col = "1" class = "values" textWrap = "true"></Label>
+            <Label text="Heart Muscle, Calves " pageTransition = "fade" row = "4" col = "1" class = "values" textWrap = "true"></Label>
+            </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </ScrollView>

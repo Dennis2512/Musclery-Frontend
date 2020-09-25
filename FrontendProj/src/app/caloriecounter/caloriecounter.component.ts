@@ -5,7 +5,11 @@ import * as app from "tns-core-modules/application";
 @Component({
     selector: "Caloriecounter",
     templateUrl: "./caloriecounter.component.html",
+<<<<<<< HEAD
     styleUrls: ["/caloriecounter.component.css"]
+=======
+    styleUrls: ["./caloriecounter.component.css"]
+>>>>>>> 43084d2909a6658a2d3418bdc7610a874552e6ec
 })
 export class CaloriecounterComponent implements OnInit {
     mealSource: { Meal: string, Amount: number, SecondVal: number, ThirdVal: number }[] = [
