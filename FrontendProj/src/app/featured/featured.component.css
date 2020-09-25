@@ -1,0 +1,40 @@
+.tileBox{
+    margin: 2% !important;
+    width: 96%;
+    height: 170;
+    border-radius: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.space {
+    height: 20;
+  }
+
+  #legpressRecommendation{
+      background-color:rgb(1, 225, 233);
+  }
+
+  #pushupsRecommendation{
+      background-color:rgb(1, 225, 233);
+  }
+
+  #treadmillRecommendation{
+    background-color:rgb(1, 225, 233);
+  }
+
+  .headers{
+      text-align: center;
+      vertical-align: center;
+      color: black;
+      font-size: 14;
+      font-weight: 700;
+  }
+
+  .values{
+      text-align:center;
+      vertical-align: center;
+      color: black;
+      font-size: 14;
+  }

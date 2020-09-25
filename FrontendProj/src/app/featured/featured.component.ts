@@ -2,9 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
+
 @Component({
     selector: "Featured",
-    templateUrl: "./featured.component.html"
+    templateUrl: "./featured.component.html",
+    styleUrls: ["./featured.component.css"]
 })
 export class FeaturedComponent implements OnInit {
 
