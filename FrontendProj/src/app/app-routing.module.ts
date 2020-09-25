@@ -4,7 +4,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { WorkoutlogDetailsComponent } from "./workoutlogdetails/workoutlogdetails.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "", redirectTo: "/login", pathMatch: "full" },
     {
         path: "home",
         loadChildren: () =>

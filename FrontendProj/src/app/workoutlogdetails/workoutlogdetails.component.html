@@ -26,12 +26,29 @@
 <!-- <GridLayout class="page__content">
 </GridLayout> -->
 
-<StackLayout style="color: black">
+<StackLayout style="color: black" class="body">
   <Label
-    text = "hello"
+   text = "Datum: 25. September 2020"
+   class="title"
   ></Label>
 
-  <Button text="Add Exercize" ></Button>
-  <Button text="Save" ></Button>
+  <Label class="trainingsname" text="Bauchtraining"></Label>
+
+  <StackLayout class="uebungsdivision">
+    <Label class="littleTitle" text="Übungen"></Label>
+    <StackLayout class="exercize">
+      <Label class="uebungsliste" text="Übung 1"></Label>
+      <Label class="uebungsliste" text="Übung 2"></Label>
+      <Label class="uebungsliste" text="Übung 3"></Label>
+    </StackLayout>
+    <Button text="Add Exercize" ></Button>
+  </StackLayout>
+
+  <StackLayout class="uebungsdivision">
+    <Label class="littleTitle" text="Notizen"></Label>
+    <TextView></TextView>
+  </StackLayout>
+
+  <Button text="Save" (tap)="saveTraining()"></Button>
   
 </StackLayout>

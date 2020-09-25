@@ -5,6 +5,7 @@ import { alert, prompt } from "tns-core-modules/ui/dialogs";
 import * as firebase from "nativescript-plugin-firebase";
 import { TrainingService } from "../services/training.service";
 import { AuthService } from "../services/auth.service";
+import { RouterExtensions } from "nativescript-angular";
 
 @Component({
     selector: "Login",
@@ -13,7 +14,7 @@ import { AuthService } from "../services/auth.service";
 })
 export class LoginComponent implements OnInit {
     isLoggingIn = true;
-    constructor(private ts: TrainingService, private as: AuthService) {
+    constructor(private ts: TrainingService, private as: AuthService, private router: RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
         if (this.isLoggingIn) {
             //perform Login
             await this.as.login();
+            this.router.navigateByUrl("/home");
         } else {
             //perform registration
             console.log("fail");

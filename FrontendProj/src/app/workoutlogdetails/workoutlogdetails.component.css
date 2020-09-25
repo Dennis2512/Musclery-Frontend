@@ -1,0 +1,27 @@
+.body {
+  margin: 2%;
+  padding: 1%;
+  font-family: monospace;
+}
+.title {
+  font-size: 10vh;
+}
+
+.littleTitle {
+  font-size: 15vh;
+}
+
+.trainingsname {
+  font-size: 20vh;
+}
+
+.uebungsdivision {
+  background-color: azure;
+  padding: 2%;
+  border: 5px, solid, black;
+}
+
+.uebungsliste {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
