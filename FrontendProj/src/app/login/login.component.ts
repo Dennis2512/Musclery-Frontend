@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
             await this.as.login();
             this.router.navigateByUrl("/home");
         } else {
-            this.router.navigateByUrl("/personalData")
+            this.router.navigateByUrl("/personalData");
             console.log("fail");
         }
     }
