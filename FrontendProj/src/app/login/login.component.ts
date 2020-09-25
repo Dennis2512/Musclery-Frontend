@@ -6,6 +6,7 @@ import * as firebase from "nativescript-plugin-firebase";
 import { TrainingService } from "../services/training.service";
 import { AuthService } from "../services/auth.service";
 import { RouterExtensions } from "nativescript-angular";
+import { ThrowStmt } from "@angular/compiler";
 
 @Component({
     selector: "Login",
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
             await this.as.login();
             this.router.navigateByUrl("/home");
         } else {
-            //perform registration
+            this.router.navigateByUrl("/personalData")
             console.log("fail");
         }
     }

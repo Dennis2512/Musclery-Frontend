@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import * as firebase from "nativescript-plugin-firebase";
 import { NativeScriptHttpClientModule } from "nativescript-angular";
 import { WorkoutlogDetailsModule } from "./workoutlogdetails/workoutlogdetails.module";
+import { PersonalDataModule } from "./personal-data/personal-data.module";
 
 //firebase = require("nativescript-plugin-firebase");
 
@@ -24,7 +25,8 @@ firebase
         NativeScriptModule,
         NativeScriptUISideDrawerModule,
         NativeScriptHttpClientModule,
-        WorkoutlogDetailsModule
+        WorkoutlogDetailsModule, 
+        PersonalDataModule
     ],
     declarations: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA],

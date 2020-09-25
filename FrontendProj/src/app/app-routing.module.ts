@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { PersonalDataComponent } from "./personal-data/personal-data.component";
 import { WorkoutlogDetailsComponent } from "./workoutlogdetails/workoutlogdetails.component";
 
 const routes: Routes = [
@@ -56,7 +57,8 @@ const routes: Routes = [
             ),
     },
     {path: "details", component: WorkoutlogDetailsComponent
-}
+},
+    {path: "personalData", component: PersonalDataComponent}
 ];
 
 @NgModule({
