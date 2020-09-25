@@ -26,8 +26,9 @@
 <!-- <GridLayout class="page__content">
 </GridLayout> -->
 
-<StackLayout style="color: black">
-  <Label
+<StackLayout class="workoutlist" style="color: black">
+  <Label 
+    class ="workout"
     *ngFor="let workout of data"
     [text]="workout.getName()!=undefined?workout.getName():workout.getDateString()"
     (tap)="onClick(workout)"
