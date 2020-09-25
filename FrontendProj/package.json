@@ -32,6 +32,7 @@
     "nativescript-cardview": "^3.2.0",
     "nativescript-material-cardview": "^3.3.1",
     "nativescript-plugin-firebase": "^10.5.2",
+    "nativescript-ui-chart": "^8.0.2",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.4.0",
