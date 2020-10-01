@@ -45,3 +45,7 @@ app.*.map.json
 
 # android firebase
 *google-services.json
+
+# ios firebase
+
+*GoogleService-Info.plist

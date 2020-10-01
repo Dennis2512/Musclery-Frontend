@@ -1,6 +1,6 @@
 # trainingstagebuch
 
-My private flutter projekt to track calories and documentate my training.
+A new Flutter project.
 
 ## Getting Started
 
