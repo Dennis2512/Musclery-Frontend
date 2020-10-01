@@ -11,8 +11,8 @@ class FoodService {
   Future<void> fetchFood() async {
     try {
       food = [];
-      var res = await http.get(
-          "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/food");
+      var res = await http
+          .get("https://europe-west3-muclery6669.cloudfunctions.net/food");
       if (res.statusCode == 200) {
         final dynamic js = json.decode(res.body);
         js.forEach((element) {
@@ -68,7 +68,7 @@ class FoodService {
   Future<String> addFood(Food food) async {
     try {
       var res = await http.post(
-          "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/food",
+          "https://europe-west3-muclery6669.cloudfunctions.net/food",
           body: {"food": json.encode(food.toJson())});
 
       if (res.statusCode == 200) {

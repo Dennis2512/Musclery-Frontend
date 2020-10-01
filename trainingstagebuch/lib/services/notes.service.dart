@@ -10,7 +10,7 @@ class NotesService {
     try {
       final token = await _auth.getToken();
       final res = await http.post(
-          "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/calories",
+          "https://europe-west3-muclery6669.cloudfunctions.net/calories",
           headers: {"authorization": "Bearer " + token},
           body: json.encode(day.toJson()));
       if (res.statusCode == 200) {

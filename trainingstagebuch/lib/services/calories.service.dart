@@ -55,7 +55,7 @@ class CaloriesService {
       if (_day == null) {
         final token = await _auth.getToken();
         var res = await http.get(
-            "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/calories",
+            "https://europe-west3-muclery6669.cloudfunctions.net/calories",
             headers: {
               "authorization": "Bearer " + token,
               "date": dateToString(_time)
@@ -76,7 +76,7 @@ class CaloriesService {
     try {
       final token = await _auth.getToken();
       final res = await http.post(
-          "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/calories",
+          "https://europe-west3-muclery6669.cloudfunctions.net/calories",
           headers: {"authorization": "Bearer " + token},
           body: json.encode(_day.toJson()));
     } catch (err) {

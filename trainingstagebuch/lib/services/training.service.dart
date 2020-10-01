@@ -12,7 +12,7 @@ class TrainingService {
     try {
       final token = await _auth.getToken();
       var res = await http.get(
-          "https://europe-west3-trainingstagebuch-f8308.cloudfunctions.net/training",
+          "https://europe-west3-muclery6669.cloudfunctions.net/training",
           headers: {"authorization": "Bearer " + token});
       if (res.statusCode == 200) {
         dynamic data = json.decode(res.body);
