@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1065962684368-pccuk5bsfa3b1vig4esc0lmj2kmnfrkh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1065962684368-pccuk5bsfa3b1vig4esc0lmj2kmnfrkh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCZLK-Ajq4PpEowQ5ARSz5FT-5KjPRVpAI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1065962684368</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.nativescript.myThridProj</string>
+	<key>PROJECT_ID</key>
+	<string>muclery6669</string>
+	<key>STORAGE_BUCKET</key>
+	<string>muclery6669.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1065962684368:ios:217a39b7bb57f4c65943d5</string>
+	<key>DATABASE_URL</key>
+	<string>https://muclery6669.firebaseio.com</string>
+</dict>
+</plist>
