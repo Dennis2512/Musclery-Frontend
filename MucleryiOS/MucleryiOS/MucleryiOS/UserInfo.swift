@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Firebase
 class UserInfo: ObservableObject {
     enum FBAuthState {
         case undefinded, signedOut, signedIn
@@ -15,6 +15,11 @@ class UserInfo: ObservableObject {
     
     func configureFirebaseStateDidChange(){
         //self.isUserAuthenticated = .signedOut
-        self.isUserAuthenticated = .signedIn
+        
+        if Auth.auth().currentUser != nil{
+            self.isUserAuthenticated = .signedIn
+        } else {
+            self.isUserAuthenticated = .signedOut
+        }
     }
 }

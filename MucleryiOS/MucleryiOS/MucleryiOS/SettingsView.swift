@@ -6,9 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
+    
+    func signOut(){
+        do {
+            try Auth.auth().signOut()
+            self.userInfo.isUserAuthenticated = .signedOut
+        } catch {
+            print("damn")
+        }
+        
+    }
     var body: some View {
         Group {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
@@ -33,7 +44,7 @@ struct SettingsView: View {
                                 .foregroundColor(.white)
                                 .border(Color.gray, width: 0.5)
                                 .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 280, content: {
+                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 260, content: {
                                     /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
                                         .foregroundColor(.black)
                                     Image(systemName: "chevron.right")
@@ -48,7 +59,7 @@ struct SettingsView: View {
                                 .foregroundColor(.white)
                                 .border(Color.gray, width: 0.5)
                                 .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 320.0, content: {
+                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 300.0, content: {
                                     Text("Profile")
                                         .foregroundColor(.black)
                                     Image(systemName: "chevron.right")
@@ -58,14 +69,12 @@ struct SettingsView: View {
                         .padding(.bottom, -9.0)
                         .padding(.top, 0.0)
                         //Logout
-                        Button(action: {
-                            self.userInfo.isUserAuthenticated = .signedOut
-                        }) {
+                        Button(action: signOut) {
                             Rectangle()
                                 .foregroundColor(.white)
                                 .border(Color.gray, width: 0.5)
                                 .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 303.0, content: {
+                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 283.0, content: {
                                     Text("Log out")
                                         .foregroundColor(.red)
                                     Image(systemName: "delete.right")
