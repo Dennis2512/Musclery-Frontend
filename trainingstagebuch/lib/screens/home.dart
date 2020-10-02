@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trainingstagebuch/screens/analyse.dart';
+import 'package:trainingstagebuch/screens/drawer/bmi.dart';
 import 'package:trainingstagebuch/screens/drawer/profile.dart';
 import 'package:trainingstagebuch/screens/essen/essen.dart';
 import 'package:trainingstagebuch/screens/drawer/settings.dart';
@@ -61,6 +62,13 @@ class _HomeState extends State<Home> {
               leading: Icon(Icons.star),
               onTap: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Featured())),
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Bmi"),
+              leading: Icon(Icons.functions),
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Bmi())),
             ),
             Divider(),
             ListTile(
