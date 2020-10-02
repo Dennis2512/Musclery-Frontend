@@ -36,13 +36,17 @@ struct CalTrackView: View {
                     .overlay(
                         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                                Button(action: {
+                                    currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)!
+                                }) {
                                     Image(systemName: "chevron.left")
                                 }
                                 DatePicker("", selection: $currentDate, displayedComponents: .date)
                                     .labelsHidden()
                                     .frame(width: 340)
-                                Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                                Button(action: {
+                                    currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+                                }) {
                                     Image(systemName: "chevron.right")
                                 }
                             })
