@@ -40,6 +40,14 @@ struct ContentView: View {
                     }
                 }
                 .tag(2)
+                SettingsView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+                }
+                .tag(2)
             }
             .accentColor(.black)
         }

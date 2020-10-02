@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70BBC8725278BC400749D6B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BBC8625278BC400749D6B /* SettingsView.swift */; };
 		C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */; };
 		C7A1CE7125274478009D975B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7025274478009D975B /* ContentView.swift */; };
 		C7A1CE7325274479009D975B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7225274479009D975B /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70BBC8625278BC400749D6B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C7A1CE6B25274478009D975B /* MucleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSApp.swift; sourceTree = "<group>"; };
 		C7A1CE7025274478009D975B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				C7A1CEA125274A32009D975B /* CalTrackView.swift */,
 				C7A1CEA625274A75009D975B /* SportView.swift */,
 				C7A1CEB325274AB6009D975B /* AnalyseView.swift */,
+				C70BBC8625278BC400749D6B /* SettingsView.swift */,
 				C7A1CE7225274479009D975B /* Assets.xcassets */,
 				C7A1CE7725274479009D975B /* Persistence.swift */,
 				C7A1CE7C25274479009D975B /* Info.plist */,
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A1CE7825274479009D975B /* Persistence.swift in Sources */,
+				C70BBC8725278BC400749D6B /* SettingsView.swift in Sources */,
 				C7A1CE7125274478009D975B /* ContentView.swift in Sources */,
 				C7A1CEA225274A32009D975B /* CalTrackView.swift in Sources */,
 				C7A1CEA725274A75009D975B /* SportView.swift in Sources */,

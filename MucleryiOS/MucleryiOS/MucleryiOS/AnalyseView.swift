@@ -10,6 +10,7 @@ import SwiftUI
 struct AnalyseView: View {
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            //Header
             Rectangle()
                 .frame(height: /*@START_MENU_TOKEN@*/85.0/*@END_MENU_TOKEN@*/)
                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
@@ -25,6 +26,7 @@ struct AnalyseView: View {
                 Rectangle()
             })
             .offset(y: -58)
+            //ToDo
             Spacer()
         })
     }
