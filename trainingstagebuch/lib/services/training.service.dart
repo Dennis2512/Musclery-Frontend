@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:trainingstagebuch/models/training.model.dart';
 import 'package:trainingstagebuch/services/auth.service.dart';
 import 'package:http/http.dart' as http;
@@ -23,5 +24,25 @@ class TrainingService {
     } catch (err) {
       print(err);
     }
+  }
+
+  List<Widget> getContent() {
+    List<Widget> list = [];
+    trainings.forEach((training) {
+      list.add(DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        child: ListTile(
+          title: Text(training.name),
+          subtitle: Text(training.date.toString()),
+          trailing: Icon(Icons.edit),
+        ),
+      ));
+      list.add(SizedBox(
+        height: 10,
+      ));
+    });
+    return list;
   }
 }
