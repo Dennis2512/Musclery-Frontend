@@ -15,10 +15,10 @@ struct MucleryiOSApp: App {
         FirebaseApp.configure()
       }
     let persistenceController = PersistenceController.shared
-
+    var userInfo = UserInfo()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(userInfo)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
         }

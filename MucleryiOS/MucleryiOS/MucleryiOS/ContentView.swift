@@ -7,51 +7,62 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 struct ContentView: View {
     @State private var selection = 0
+    @State var isLoggedIn = true
+    @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
-        
-        VStack {
-            
-            
-                
-            TabView(selection: $selection){
-                CalTrackView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "flame")
-                            Text("CalTrack")
+        Group {
+            if userInfo.isUserAuthenticated == .signedOut{
+                LoginView()
+            } else if userInfo.isUserAuthenticated == .signedIn{
+                VStack {
+                    TabView(selection: $selection){
+                        CalTrackView()
+                            .tabItem {
+                                VStack {
+                                    Image(systemName: "flame")
+                                    Text("CalTrack")
+                                }
+                            }
+                            .tag(0)
+                        SportView()
+                            .tabItem {
+                                VStack {
+                                    Image(systemName: "figure.walk")
+                                    Text("Sport")
+                                }
+                            }
+                            .tag(1)
+                        AnalyseView()
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "waveform.path.ecg.rectangle")
+                                Text("Analyse")
+                            }
                         }
-                    }
-                    .tag(0)
-                SportView()
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "figure.walk")
-                            Text("Sport")
+                        .tag(2)
+                        SettingsView()
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "gear")
+                                Text("Settings")
+                            }
                         }
+                        .tag(3)
                     }
-                    .tag(1)
-                AnalyseView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "waveform.path.ecg.rectangle")
-                        Text("Analyse")
-                    }
+                    .accentColor(.black)
                 }
-                .tag(2)
-                SettingsView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                }
-                .tag(2)
+            } else {
+                Text("Loading...")
             }
-            .accentColor(.black)
         }
+        .onAppear {
+            self.userInfo.configureFirebaseStateDidChange()
+        }
+        
     }
 }
 

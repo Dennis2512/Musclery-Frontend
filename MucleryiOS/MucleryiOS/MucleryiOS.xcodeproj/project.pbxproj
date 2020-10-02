@@ -10,7 +10,9 @@
 		1FA7CC95C6BBC1CEE289BCB2 /* Pods_MucleryiOS_MucleryiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354BF10A1160ACCB087434FA /* Pods_MucleryiOS_MucleryiOSUITests.framework */; };
 		4F3AC96904A25EF772A63A0D /* Pods_MucleryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C82096E1B55CD29EE6AC74 /* Pods_MucleryiOS.framework */; };
 		C70BBC8725278BC400749D6B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BBC8625278BC400749D6B /* SettingsView.swift */; };
+		C734E8BF2527C5B3000CF55D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734E8BE2527C5B3000CF55D /* UserInfo.swift */; };
 		C73F292F2527B20A0020E66F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C73F292E2527B20A0020E66F /* GoogleService-Info.plist */; };
+		C73F293F2527B4780020E66F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F293E2527B4780020E66F /* LoginView.swift */; };
 		C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */; };
 		C7A1CE7125274478009D975B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7025274478009D975B /* ContentView.swift */; };
 		C7A1CE7325274479009D975B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7225274479009D975B /* Assets.xcassets */; };
@@ -52,7 +54,9 @@
 		B85FEC50EC5D45BEBB5E9041 /* Pods-MucleryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MucleryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-MucleryiOSTests/Pods-MucleryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB406CB4AE910AA05CF36810 /* Pods-MucleryiOS-MucleryiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MucleryiOS-MucleryiOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-MucleryiOS-MucleryiOSUITests/Pods-MucleryiOS-MucleryiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C70BBC8625278BC400749D6B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C734E8BE2527C5B3000CF55D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		C73F292E2527B20A0020E66F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C73F293E2527B4780020E66F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C7A1CE6B25274478009D975B /* MucleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSApp.swift; sourceTree = "<group>"; };
 		C7A1CE7025274478009D975B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C734E8C32527C8BB000CF55D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C7A1CE6225274478009D975B = {
 			isa = PBXGroup;
 			children = (
@@ -141,16 +152,19 @@
 			children = (
 				C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */,
 				C7A1CE7025274478009D975B /* ContentView.swift */,
+				C73F293E2527B4780020E66F /* LoginView.swift */,
 				C7A1CEA125274A32009D975B /* CalTrackView.swift */,
 				C7A1CEA625274A75009D975B /* SportView.swift */,
 				C7A1CEB325274AB6009D975B /* AnalyseView.swift */,
 				C70BBC8625278BC400749D6B /* SettingsView.swift */,
+				C734E8C32527C8BB000CF55D /* Views */,
 				C7A1CE7225274479009D975B /* Assets.xcassets */,
 				C7A1CE7725274479009D975B /* Persistence.swift */,
 				C7A1CE7C25274479009D975B /* Info.plist */,
 				C7A1CE7925274479009D975B /* MucleryiOS.xcdatamodeld */,
 				C73F292E2527B20A0020E66F /* GoogleService-Info.plist */,
 				C7A1CE7425274479009D975B /* Preview Content */,
+				C734E8BE2527C5B3000CF55D /* UserInfo.swift */,
 			);
 			path = MucleryiOS;
 			sourceTree = "<group>";
@@ -432,10 +446,12 @@
 				C7A1CE7825274479009D975B /* Persistence.swift in Sources */,
 				C70BBC8725278BC400749D6B /* SettingsView.swift in Sources */,
 				C7A1CE7125274478009D975B /* ContentView.swift in Sources */,
+				C73F293F2527B4780020E66F /* LoginView.swift in Sources */,
 				C7A1CEA225274A32009D975B /* CalTrackView.swift in Sources */,
 				C7A1CEA725274A75009D975B /* SportView.swift in Sources */,
 				C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */,
 				C7A1CEB425274AB6009D975B /* AnalyseView.swift in Sources */,
+				C734E8BF2527C5B3000CF55D /* UserInfo.swift in Sources */,
 				C7A1CE7B25274479009D975B /* MucleryiOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
