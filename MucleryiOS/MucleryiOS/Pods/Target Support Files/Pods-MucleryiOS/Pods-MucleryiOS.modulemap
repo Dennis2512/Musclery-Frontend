@@ -1,0 +1,6 @@
+framework module Pods_MucleryiOS {
+  umbrella header "Pods-MucleryiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

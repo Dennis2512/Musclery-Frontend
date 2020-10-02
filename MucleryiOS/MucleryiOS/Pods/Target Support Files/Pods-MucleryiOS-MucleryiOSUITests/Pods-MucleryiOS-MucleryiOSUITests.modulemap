@@ -1,0 +1,6 @@
+framework module Pods_MucleryiOS_MucleryiOSUITests {
+  umbrella header "Pods-MucleryiOS-MucleryiOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct MucleryiOSApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+      }
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }
+
