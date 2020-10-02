@@ -38,7 +38,7 @@ struct CalTrackView: View {
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.circular/*@END_MENU_TOKEN@*/)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
-                    .frame(width: 400.0, height: 120.0)
+                    .frame(width: 365.0, height: 120.0)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .stroke()
                                 .foregroundColor(.gray)
@@ -54,7 +54,7 @@ struct CalTrackView: View {
                                 }
                                 DatePicker("", selection: $currentDate, displayedComponents: .date)
                                     .labelsHidden()
-                                    .frame(width: 340)
+                                    .frame(width: 310)
                                 Button(action: {
                                     currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
                                 }) {
@@ -64,11 +64,11 @@ struct CalTrackView: View {
                             .offset(y: 10)
                             //Seperator
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                                .frame(width: 380.0, height: 1.0)
+                                .frame(width: 345.0, height: 1.0)
                                 .foregroundColor(.gray)
                                 .offset(y: 15)
                             //Cals
-                            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 50, content: {
+                            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 44, content: {
                                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                                     Text("\(targetCal)")
                                     Text("Ziel")
@@ -103,7 +103,7 @@ struct CalTrackView: View {
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
-                    .frame(width: 400.0, height: 100.0)
+                    .frame(width: 365, height: 100.0)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .stroke()
                                 .foregroundColor(.gray)
@@ -122,7 +122,7 @@ struct CalTrackView: View {
                                 .padding(.bottom, -2.0)
                                 .padding(.top, 2.0)
                                 .foregroundColor(.gray)
-                                .frame(width: 370.0, height: 37.0)
+                                .frame(width: 350.0, height: 37.0)
                                 .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                                     Text("Nahrungsmittel Hinzufuegen")
                                         .offset(y: 2)
@@ -135,13 +135,13 @@ struct CalTrackView: View {
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
-                    .frame(width: 400.0, height: 100.0)
+                    .frame(width: 365, height: 100.0)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .stroke()
                                 .foregroundColor(.gray)
                                 .padding(.top, 0))
                     .overlay(VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
-                        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 250, content: {
+                        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 237, content: {
                             Text("Mittagessen")
                                 .foregroundColor(.black)
                             Text("\(lunchCal)")
@@ -154,7 +154,7 @@ struct CalTrackView: View {
                                 .padding(.bottom, -2.0)
                                 .padding(.top, 2.0)
                                 .foregroundColor(.gray)
-                                .frame(width: 370.0, height: 37.0)
+                                .frame(width: 350.0, height: 37.0)
                                 .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                                     Text("Nahrungsmittel Hinzufuegen")
                                         .offset(y: 2)
@@ -167,13 +167,13 @@ struct CalTrackView: View {
                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
-                    .frame(width: 400.0, height: 100.0)
+                    .frame(width: 365, height: 100.0)
                     .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 .stroke()
                                 .foregroundColor(.gray)
                                 .padding(.top, 0))
                     .overlay(VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
-                        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 250, content: {
+                        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 237, content: {
                             Text("Abendessen")
                                 .foregroundColor(.black)
                             Text("\(dinnerCal)")
@@ -186,7 +186,7 @@ struct CalTrackView: View {
                                 .padding(.bottom, -2.0)
                                 .padding(.top, 2.0)
                                 .foregroundColor(.gray)
-                                .frame(width: 370.0, height: 37.0)
+                                .frame(width: 350.0, height: 37.0)
                                 .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                                     Text("Nahrungsmittel Hinzufuegen")
                                         .offset(y: 2)
