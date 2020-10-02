@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */; };
+		C7A1CE7125274478009D975B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7025274478009D975B /* ContentView.swift */; };
+		C7A1CE7325274479009D975B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7225274479009D975B /* Assets.xcassets */; };
+		C7A1CE7625274479009D975B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7525274479009D975B /* Preview Assets.xcassets */; };
+		C7A1CE7825274479009D975B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7725274479009D975B /* Persistence.swift */; };
+		C7A1CE7B25274479009D975B /* MucleryiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7925274479009D975B /* MucleryiOS.xcdatamodeld */; };
+		C7A1CE8625274479009D975B /* MucleryiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE8525274479009D975B /* MucleryiOSTests.swift */; };
+		C7A1CE9125274479009D975B /* MucleryiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE9025274479009D975B /* MucleryiOSUITests.swift */; };
+		C7A1CEA225274A32009D975B /* CalTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CEA125274A32009D975B /* CalTrackView.swift */; };
+		C7A1CEA725274A75009D975B /* SportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CEA625274A75009D975B /* SportView.swift */; };
+		C7A1CEB425274AB6009D975B /* AnalyseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CEB325274AB6009D975B /* AnalyseView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7A1CE8225274479009D975B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A1CE6325274478009D975B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A1CE6A25274478009D975B;
+			remoteInfo = MucleryiOS;
+		};
+		C7A1CE8D25274479009D975B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A1CE6325274478009D975B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A1CE6A25274478009D975B;
+			remoteInfo = MucleryiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C7A1CE6B25274478009D975B /* MucleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSApp.swift; sourceTree = "<group>"; };
+		C7A1CE7025274478009D975B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C7A1CE7225274479009D975B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7A1CE7525274479009D975B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7A1CE7725274479009D975B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C7A1CE7A25274479009D975B /* MucleryiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MucleryiOS.xcdatamodel; sourceTree = "<group>"; };
+		C7A1CE7C25274479009D975B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A1CE8125274479009D975B /* MucleryiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MucleryiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A1CE8525274479009D975B /* MucleryiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSTests.swift; sourceTree = "<group>"; };
+		C7A1CE8725274479009D975B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A1CE8C25274479009D975B /* MucleryiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MucleryiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A1CE9025274479009D975B /* MucleryiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSUITests.swift; sourceTree = "<group>"; };
+		C7A1CE9225274479009D975B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A1CEA125274A32009D975B /* CalTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTrackView.swift; sourceTree = "<group>"; };
+		C7A1CEA625274A75009D975B /* SportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportView.swift; sourceTree = "<group>"; };
+		C7A1CEB325274AB6009D975B /* AnalyseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyseView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7A1CE6825274478009D975B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE7E25274479009D975B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE8925274479009D975B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7A1CE6225274478009D975B = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE6D25274478009D975B /* MucleryiOS */,
+				C7A1CE8425274479009D975B /* MucleryiOSTests */,
+				C7A1CE8F25274479009D975B /* MucleryiOSUITests */,
+				C7A1CE6C25274478009D975B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7A1CE6C25274478009D975B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE6B25274478009D975B /* MucleryiOS.app */,
+				C7A1CE8125274479009D975B /* MucleryiOSTests.xctest */,
+				C7A1CE8C25274479009D975B /* MucleryiOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7A1CE6D25274478009D975B /* MucleryiOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */,
+				C7A1CE7025274478009D975B /* ContentView.swift */,
+				C7A1CEA125274A32009D975B /* CalTrackView.swift */,
+				C7A1CEA625274A75009D975B /* SportView.swift */,
+				C7A1CEB325274AB6009D975B /* AnalyseView.swift */,
+				C7A1CE7225274479009D975B /* Assets.xcassets */,
+				C7A1CE7725274479009D975B /* Persistence.swift */,
+				C7A1CE7C25274479009D975B /* Info.plist */,
+				C7A1CE7925274479009D975B /* MucleryiOS.xcdatamodeld */,
+				C7A1CE7425274479009D975B /* Preview Content */,
+			);
+			path = MucleryiOS;
+			sourceTree = "<group>";
+		};
+		C7A1CE7425274479009D975B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE7525274479009D975B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C7A1CE8425274479009D975B /* MucleryiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE8525274479009D975B /* MucleryiOSTests.swift */,
+				C7A1CE8725274479009D975B /* Info.plist */,
+			);
+			path = MucleryiOSTests;
+			sourceTree = "<group>";
+		};
+		C7A1CE8F25274479009D975B /* MucleryiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C7A1CE9025274479009D975B /* MucleryiOSUITests.swift */,
+				C7A1CE9225274479009D975B /* Info.plist */,
+			);
+			path = MucleryiOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7A1CE6A25274478009D975B /* MucleryiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A1CE9525274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOS" */;
+			buildPhases = (
+				C7A1CE6725274478009D975B /* Sources */,
+				C7A1CE6825274478009D975B /* Frameworks */,
+				C7A1CE6925274478009D975B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MucleryiOS;
+			productName = MucleryiOS;
+			productReference = C7A1CE6B25274478009D975B /* MucleryiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7A1CE8025274479009D975B /* MucleryiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A1CE9825274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOSTests" */;
+			buildPhases = (
+				C7A1CE7D25274479009D975B /* Sources */,
+				C7A1CE7E25274479009D975B /* Frameworks */,
+				C7A1CE7F25274479009D975B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7A1CE8325274479009D975B /* PBXTargetDependency */,
+			);
+			name = MucleryiOSTests;
+			productName = MucleryiOSTests;
+			productReference = C7A1CE8125274479009D975B /* MucleryiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7A1CE8B25274479009D975B /* MucleryiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A1CE9B25274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOSUITests" */;
+			buildPhases = (
+				C7A1CE8825274479009D975B /* Sources */,
+				C7A1CE8925274479009D975B /* Frameworks */,
+				C7A1CE8A25274479009D975B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7A1CE8E25274479009D975B /* PBXTargetDependency */,
+			);
+			name = MucleryiOSUITests;
+			productName = MucleryiOSUITests;
+			productReference = C7A1CE8C25274479009D975B /* MucleryiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7A1CE6325274478009D975B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					C7A1CE6A25274478009D975B = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					C7A1CE8025274479009D975B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = C7A1CE6A25274478009D975B;
+					};
+					C7A1CE8B25274479009D975B = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = C7A1CE6A25274478009D975B;
+					};
+				};
+			};
+			buildConfigurationList = C7A1CE6625274478009D975B /* Build configuration list for PBXProject "MucleryiOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7A1CE6225274478009D975B;
+			productRefGroup = C7A1CE6C25274478009D975B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7A1CE6A25274478009D975B /* MucleryiOS */,
+				C7A1CE8025274479009D975B /* MucleryiOSTests */,
+				C7A1CE8B25274479009D975B /* MucleryiOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7A1CE6925274478009D975B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A1CE7625274479009D975B /* Preview Assets.xcassets in Resources */,
+				C7A1CE7325274479009D975B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE7F25274479009D975B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE8A25274479009D975B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7A1CE6725274478009D975B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A1CE7825274479009D975B /* Persistence.swift in Sources */,
+				C7A1CE7125274478009D975B /* ContentView.swift in Sources */,
+				C7A1CEA225274A32009D975B /* CalTrackView.swift in Sources */,
+				C7A1CEA725274A75009D975B /* SportView.swift in Sources */,
+				C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */,
+				C7A1CEB425274AB6009D975B /* AnalyseView.swift in Sources */,
+				C7A1CE7B25274479009D975B /* MucleryiOS.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE7D25274479009D975B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A1CE8625274479009D975B /* MucleryiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A1CE8825274479009D975B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A1CE9125274479009D975B /* MucleryiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7A1CE8325274479009D975B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7A1CE6A25274478009D975B /* MucleryiOS */;
+			targetProxy = C7A1CE8225274479009D975B /* PBXContainerItemProxy */;
+		};
+		C7A1CE8E25274479009D975B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7A1CE6A25274478009D975B /* MucleryiOS */;
+			targetProxy = C7A1CE8D25274479009D975B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C7A1CE9325274479009D975B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7A1CE9425274479009D975B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7A1CE9625274479009D975B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MucleryiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MucleryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7A1CE9725274479009D975B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MucleryiOS/Preview Content\"";
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MucleryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C7A1CE9925274479009D975B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				INFOPLIST_FILE = MucleryiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MucleryiOS.app/MucleryiOS";
+			};
+			name = Debug;
+		};
+		C7A1CE9A25274479009D975B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				INFOPLIST_FILE = MucleryiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MucleryiOS.app/MucleryiOS";
+			};
+			name = Release;
+		};
+		C7A1CE9C25274479009D975B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				INFOPLIST_FILE = MucleryiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MucleryiOS;
+			};
+			name = Debug;
+		};
+		C7A1CE9D25274479009D975B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LMC9WJ4W7B;
+				INFOPLIST_FILE = MucleryiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.vance.MucleryiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MucleryiOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7A1CE6625274478009D975B /* Build configuration list for PBXProject "MucleryiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A1CE9325274479009D975B /* Debug */,
+				C7A1CE9425274479009D975B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A1CE9525274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A1CE9625274479009D975B /* Debug */,
+				C7A1CE9725274479009D975B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A1CE9825274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A1CE9925274479009D975B /* Debug */,
+				C7A1CE9A25274479009D975B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A1CE9B25274479009D975B /* Build configuration list for PBXNativeTarget "MucleryiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A1CE9C25274479009D975B /* Debug */,
+				C7A1CE9D25274479009D975B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C7A1CE7925274479009D975B /* MucleryiOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C7A1CE7A25274479009D975B /* MucleryiOS.xcdatamodel */,
+			);
+			currentVersion = C7A1CE7A25274479009D975B /* MucleryiOS.xcdatamodel */;
+			path = MucleryiOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C7A1CE6325274478009D975B /* Project object */;
+}
