@@ -9,8 +9,11 @@ class Sport extends StatefulWidget {
 
 class _SportState extends State<Sport> {
   TrainingService ts = TrainingService();
-  Widget content = SpinKitThreeBounce(
-    color: Colors.blue,
+  Widget content = Center(
+    heightFactor: 14,
+    child: SpinKitThreeBounce(
+      color: Colors.blue,
+    ),
   );
   @override
   void initState() {
@@ -20,15 +23,36 @@ class _SportState extends State<Sport> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: content,
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: SingleChildScrollView(
+        child: content,
+      ),
     );
   }
 
   initTraining() async {
     await ts.fetchTrainings();
     setState(() {
-      content = Text(ts.trainings.length.toString());
+      content = Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                ),
+                child: ListTile(
+                  title: Text("Neues Training hinzufügen"),
+                  leading: Icon(Icons.add),
+                )),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: Column(children: ts.getContent()),
+          )
+        ],
+      );
     });
   }
 }
