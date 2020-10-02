@@ -24,7 +24,7 @@ struct AnalyseView: View {
             ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
                 Rectangle()
             })
-            .offset(y: -50)
+            .offset(y: -58)
             Spacer()
         })
     }
