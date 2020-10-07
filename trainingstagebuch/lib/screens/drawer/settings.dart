@@ -44,7 +44,6 @@ class _SettingsState extends State<Settings> {
                       onSaved: (input) => data['gender'] = input,
                     ),
                     TextFormField(
-                      maxLength: 2,
                       decoration: InputDecoration(
                           labelText: 'Age (years)',
                           icon: Icon(Icons.face_rounded),
@@ -57,7 +56,6 @@ class _SettingsState extends State<Settings> {
                       onSaved: (input) => data['age'] = input,
                     ),
                     TextFormField(
-                      maxLength: 3,
                       decoration: InputDecoration(
                           labelText: 'Height (cm)',
                           icon: Icon(Icons.straighten_rounded),
