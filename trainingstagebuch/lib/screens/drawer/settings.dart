@@ -29,6 +29,13 @@ class _SettingsState extends State<Settings> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
+                    Text(
+                      'Personal Data',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     TextFormField(
                       decoration: InputDecoration(
                           labelText: 'Name',
