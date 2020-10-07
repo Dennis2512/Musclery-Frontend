@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -43,17 +44,29 @@ class _SettingsState extends State<Settings> {
                       onSaved: (input) => data['gender'] = input,
                     ),
                     TextFormField(
+                      maxLength: 2,
                       decoration: InputDecoration(
                           labelText: 'Age (years)',
                           icon: Icon(Icons.face_rounded),
                           hintText: 'How young do you feel?'),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(2),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      keyboardType: TextInputType.number,
                       onSaved: (input) => data['age'] = input,
                     ),
                     TextFormField(
+                      maxLength: 3,
                       decoration: InputDecoration(
                           labelText: 'Height (cm)',
                           icon: Icon(Icons.straighten_rounded),
                           hintText: 'How tall are you?'),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(3),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      keyboardType: TextInputType.number,
                       onSaved: (input) => data['height'] = input,
                     ),
                     TextFormField(
@@ -61,6 +74,11 @@ class _SettingsState extends State<Settings> {
                           labelText: 'Weight (kg)',
                           icon: Icon(Icons.pregnant_woman_rounded),
                           hintText: 'How light are you?'),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(3),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      keyboardType: TextInputType.number,
                       onSaved: (input) => data['weight'] = input,
                     ),
                     TextFormField(
@@ -68,6 +86,11 @@ class _SettingsState extends State<Settings> {
                           labelText: 'Calories Goal (kcal)',
                           icon: Icon(Icons.local_dining_rounded),
                           hintText: 'What`s your max. of kcal per day?'),
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(4),
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
+                      keyboardType: TextInputType.number,
                       onSaved: (input) => data['calories'] = input,
                     ),
                     TextFormField(
