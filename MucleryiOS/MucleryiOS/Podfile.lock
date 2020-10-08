@@ -335,6 +335,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - GoogleDataTransport (from `https://github.com/firebase/firebase-ios-sdk.git`, commit `38be2cc`)
 
 SPEC REPOS:
   trunk:
@@ -348,7 +349,6 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstallations
     - GoogleAppMeasurement
-    - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -356,6 +356,16 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+
+EXTERNAL SOURCES:
+  GoogleDataTransport:
+    :commit: 38be2cc
+    :git: https://github.com/firebase/firebase-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  GoogleDataTransport:
+    :commit: 38be2cc
+    :git: https://github.com/firebase/firebase-ios-sdk.git
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -377,6 +387,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
-PODFILE CHECKSUM: e5e5dc27025d5f75993abc9198c45e4b42ecfe97
+PODFILE CHECKSUM: 197db632a275c400b361b1e5e28020ce041c69de
 
 COCOAPODS: 1.9.3

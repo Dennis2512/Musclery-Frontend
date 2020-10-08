@@ -10,6 +10,7 @@ target 'MucleryiOS' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'GoogleDataTransport', :git=>'https://github.com/firebase/firebase-ios-sdk.git', :commit=>'38be2cc'
 
   target 'MucleryiOSTests' do
     inherit! :search_paths

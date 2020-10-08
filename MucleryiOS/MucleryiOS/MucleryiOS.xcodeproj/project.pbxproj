@@ -13,6 +13,18 @@
 		C734E8BF2527C5B3000CF55D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C734E8BE2527C5B3000CF55D /* UserInfo.swift */; };
 		C73F292F2527B20A0020E66F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C73F292E2527B20A0020E66F /* GoogleService-Info.plist */; };
 		C73F293F2527B4780020E66F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F293E2527B4780020E66F /* LoginView.swift */; };
+		C74BB239252F5AA9000FEDCF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB238252F5AA9000FEDCF /* MainView.swift */; };
+		C74BB242252F5AF1000FEDCF /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB23D252F5AF1000FEDCF /* CreateAccountView.swift */; };
+		C74BB243252F5AF1000FEDCF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB23E252F5AF1000FEDCF /* UserViewModel.swift */; };
+		C74BB244252F5AF1000FEDCF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB23F252F5AF1000FEDCF /* SignUpView.swift */; };
+		C74BB245252F5AF1000FEDCF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB240252F5AF1000FEDCF /* LoginView.swift */; };
+		C74BB246252F5AF1000FEDCF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB241252F5AF1000FEDCF /* ForgotPasswordView.swift */; };
+		C74BB262252F5BCC000FEDCF /* FBFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB25E252F5BCC000FEDCF /* FBFireStore.swift */; };
+		C74BB263252F5BCC000FEDCF /* FBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB25F252F5BCC000FEDCF /* FBKeys.swift */; };
+		C74BB264252F5BCC000FEDCF /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB260252F5BCC000FEDCF /* FBUser.swift */; };
+		C74BB265252F5BCC000FEDCF /* FBFireStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB261252F5BCC000FEDCF /* FBFireStoreError.swift */; };
+		C74BB26B252F5BD3000FEDCF /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB269252F5BD3000FEDCF /* FBAuth.swift */; };
+		C74BB26C252F5BD3000FEDCF /* FBAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BB26A252F5BD3000FEDCF /* FBAuthError.swift */; };
 		C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */; };
 		C7A1CE7125274478009D975B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7025274478009D975B /* ContentView.swift */; };
 		C7A1CE7325274479009D975B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7225274479009D975B /* Assets.xcassets */; };
@@ -57,6 +69,18 @@
 		C734E8BE2527C5B3000CF55D /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		C73F292E2527B20A0020E66F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C73F293E2527B4780020E66F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C74BB238252F5AA9000FEDCF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C74BB23D252F5AF1000FEDCF /* CreateAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountView.swift; path = MucleryiOS/CreateAccountView.swift; sourceTree = SOURCE_ROOT; };
+		C74BB23E252F5AF1000FEDCF /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = MucleryiOS/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		C74BB23F252F5AF1000FEDCF /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = MucleryiOS/SignUpView.swift; sourceTree = SOURCE_ROOT; };
+		C74BB240252F5AF1000FEDCF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = MucleryiOS/LoginView.swift; sourceTree = SOURCE_ROOT; };
+		C74BB241252F5AF1000FEDCF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordView.swift; path = MucleryiOS/ForgotPasswordView.swift; sourceTree = SOURCE_ROOT; };
+		C74BB25E252F5BCC000FEDCF /* FBFireStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFireStore.swift; sourceTree = "<group>"; };
+		C74BB25F252F5BCC000FEDCF /* FBKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBKeys.swift; sourceTree = "<group>"; };
+		C74BB260252F5BCC000FEDCF /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
+		C74BB261252F5BCC000FEDCF /* FBFireStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFireStoreError.swift; sourceTree = "<group>"; };
+		C74BB269252F5BD3000FEDCF /* FBAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
+		C74BB26A252F5BD3000FEDCF /* FBAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthError.swift; sourceTree = "<group>"; };
 		C7A1CE6B25274478009D975B /* MucleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSApp.swift; sourceTree = "<group>"; };
 		C7A1CE7025274478009D975B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +149,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C74BB24A252F5B4C000FEDCF /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				C74BB269252F5BD3000FEDCF /* FBAuth.swift */,
+				C74BB26A252F5BD3000FEDCF /* FBAuthError.swift */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		C74BB24B252F5B56000FEDCF /* FirebaseFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				C74BB25E252F5BCC000FEDCF /* FBFireStore.swift */,
+				C74BB261252F5BCC000FEDCF /* FBFireStoreError.swift */,
+				C74BB25F252F5BCC000FEDCF /* FBKeys.swift */,
+				C74BB260252F5BCC000FEDCF /* FBUser.swift */,
+			);
+			path = FirebaseFirestore;
+			sourceTree = "<group>";
+		};
 		C7A1CE6225274478009D975B = {
 			isa = PBXGroup;
 			children = (
@@ -150,13 +194,21 @@
 		C7A1CE6D25274478009D975B /* MucleryiOS */ = {
 			isa = PBXGroup;
 			children = (
+				C74BB24B252F5B56000FEDCF /* FirebaseFirestore */,
+				C74BB24A252F5B4C000FEDCF /* FirebaseAuth */,
 				C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */,
 				C7A1CE7025274478009D975B /* ContentView.swift */,
+				C74BB238252F5AA9000FEDCF /* MainView.swift */,
+				C74BB23D252F5AF1000FEDCF /* CreateAccountView.swift */,
+				C74BB241252F5AF1000FEDCF /* ForgotPasswordView.swift */,
 				C73F293E2527B4780020E66F /* LoginView.swift */,
 				C7A1CEA125274A32009D975B /* CalTrackView.swift */,
 				C7A1CEA625274A75009D975B /* SportView.swift */,
 				C7A1CEB325274AB6009D975B /* AnalyseView.swift */,
 				C70BBC8625278BC400749D6B /* SettingsView.swift */,
+				C74BB240252F5AF1000FEDCF /* LoginView.swift */,
+				C74BB23F252F5AF1000FEDCF /* SignUpView.swift */,
+				C74BB23E252F5AF1000FEDCF /* UserViewModel.swift */,
 				C734E8C32527C8BB000CF55D /* Views */,
 				C7A1CE7225274479009D975B /* Assets.xcassets */,
 				C7A1CE7725274479009D975B /* Persistence.swift */,
@@ -445,12 +497,24 @@
 			files = (
 				C7A1CE7825274479009D975B /* Persistence.swift in Sources */,
 				C70BBC8725278BC400749D6B /* SettingsView.swift in Sources */,
+				C74BB26C252F5BD3000FEDCF /* FBAuthError.swift in Sources */,
+				C74BB246252F5AF1000FEDCF /* ForgotPasswordView.swift in Sources */,
+				C74BB264252F5BCC000FEDCF /* FBUser.swift in Sources */,
 				C7A1CE7125274478009D975B /* ContentView.swift in Sources */,
+				C74BB245252F5AF1000FEDCF /* LoginView.swift in Sources */,
 				C73F293F2527B4780020E66F /* LoginView.swift in Sources */,
 				C7A1CEA225274A32009D975B /* CalTrackView.swift in Sources */,
 				C7A1CEA725274A75009D975B /* SportView.swift in Sources */,
+				C74BB242252F5AF1000FEDCF /* CreateAccountView.swift in Sources */,
+				C74BB265252F5BCC000FEDCF /* FBFireStoreError.swift in Sources */,
 				C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */,
+				C74BB26B252F5BD3000FEDCF /* FBAuth.swift in Sources */,
+				C74BB239252F5AA9000FEDCF /* MainView.swift in Sources */,
+				C74BB262252F5BCC000FEDCF /* FBFireStore.swift in Sources */,
+				C74BB243252F5AF1000FEDCF /* UserViewModel.swift in Sources */,
+				C74BB244252F5AF1000FEDCF /* SignUpView.swift in Sources */,
 				C7A1CEB425274AB6009D975B /* AnalyseView.swift in Sources */,
+				C74BB263252F5BCC000FEDCF /* FBKeys.swift in Sources */,
 				C734E8BF2527C5B3000CF55D /* UserInfo.swift in Sources */,
 				C7A1CE7B25274479009D975B /* MucleryiOS.xcdatamodeld in Sources */,
 			);

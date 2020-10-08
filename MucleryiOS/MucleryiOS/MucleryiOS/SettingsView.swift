@@ -12,12 +12,10 @@ struct SettingsView: View {
     @EnvironmentObject var userInfo: UserInfo
     
     func signOut(){
-        do {
-            try Auth.auth().signOut()
-            self.userInfo.isUserAuthenticated = .signedOut
-        } catch {
-            print("damn")
+        FBAuth.logout { (result) in
+            print("logged out")
         }
+        self.userInfo.isUserAuthenticated = .signedOut
         
     }
     var body: some View {
