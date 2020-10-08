@@ -12,7 +12,7 @@ enum FBFirestore {
     static func retrieveFBUser(uid: String, completion: @escaping (Result<FBUser, Error>) -> ()) {
         let reference = Firestore
             .firestore()
-            .collection(FBKeys.CollectionPath.users)
+            .collection(FBKeys.CollectionPath.user)
             .document(uid)
         getDocument(for: reference) { (result) in
             switch result {
@@ -32,7 +32,7 @@ enum FBFirestore {
     static func mergeFBUser(_ data: [String: Any], uid: String, completion: @escaping (Result<Bool, Error>) -> ()) {
         let reference = Firestore
             .firestore()
-            .collection(FBKeys.CollectionPath.users)
+            .collection(FBKeys.CollectionPath.user)
             .document(uid)
         reference.setData(data, merge: true) { (err) in
             if let err = err {

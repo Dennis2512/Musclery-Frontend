@@ -10,7 +10,7 @@ import Foundation
 enum FBKeys {
     
     enum CollectionPath {
-        static let users = "users"
+        static let user = "user"
     }
     
     enum User {
