@@ -5,7 +5,7 @@ import 'package:trainingstagebuch/screens/drawer/profile.dart';
 import 'package:trainingstagebuch/screens/essen/essen.dart';
 import 'package:trainingstagebuch/screens/drawer/settings.dart';
 import 'package:trainingstagebuch/screens/drawer/featured.dart';
-import 'package:trainingstagebuch/screens/sport.dart';
+import 'package:trainingstagebuch/screens/sport/sport.dart';
 import 'package:trainingstagebuch/services/auth.service.dart';
 
 class Home extends StatefulWidget {

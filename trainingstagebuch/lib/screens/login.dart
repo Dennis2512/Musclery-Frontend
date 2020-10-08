@@ -14,12 +14,14 @@ class _LoginState extends State<Login> {
   String _email = "";
   String _password = "";
   bool loading = false;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return SingleChildScrollView(
+        child: Padding(
       padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
       child: Form(
-        autovalidate: false,
+        autovalidateMode: AutovalidateMode.disabled,
         key: _formkey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,7 +89,7 @@ class _LoginState extends State<Login> {
           ],
         ),
       ),
-    );
+    ));
   }
 
   void _login() async {

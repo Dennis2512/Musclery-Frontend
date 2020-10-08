@@ -46,7 +46,11 @@ class _FeaturedState extends State<Featured> {
     return new Container(
       color: Colors.white,
       child: Card(
-        color: Color.fromRGBO(1, 225, 233, 100),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: Colors.blue, width: 3.0),
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -79,7 +83,7 @@ class _FeaturedState extends State<Featured> {
                       child: Text(
                           recommendationsList[index].trainingExerciseTitle,
                           style:
-                              new TextStyle(fontSize: 30, color: Colors.black)),
+                              new TextStyle(fontSize: 30, color: Colors.blue)),
                     ),
 
                     //   Spacer(),
@@ -95,7 +99,7 @@ class _FeaturedState extends State<Featured> {
                       width: 150,
                       child: Text("Training Type:",
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                     ),
 
                     //  Spacer(flex: 3),
@@ -105,7 +109,7 @@ class _FeaturedState extends State<Featured> {
                           recommendationsList[index].trainingExerciseType,
                           textAlign: TextAlign.right,
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                     ),
 
                     // Spacer(),
@@ -121,7 +125,7 @@ class _FeaturedState extends State<Featured> {
                       width: 150,
                       child: Text("Sets: ",
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                     ),
 
                     //   Spacer(flex: 3),
@@ -131,7 +135,7 @@ class _FeaturedState extends State<Featured> {
                           recommendationsList[index].numberOfSets.toString(),
                           textAlign: TextAlign.right,
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                     ),
 
                     //    Spacer(),
@@ -151,7 +155,7 @@ class _FeaturedState extends State<Featured> {
                         width: 150,
                         child: Text("Minutes:",
                             style: new TextStyle(
-                                fontSize: 15, color: Colors.white)),
+                                fontSize: 15, color: Colors.black)),
                       ),
                     if ((recommendationsList[index]
                             .trainingExerciseType
@@ -161,7 +165,7 @@ class _FeaturedState extends State<Featured> {
                         width: 150,
                         child: Text("Repetitions:",
                             style: new TextStyle(
-                                fontSize: 15, color: Colors.white)),
+                                fontSize: 15, color: Colors.black)),
                         //    Spacer(flex: 3),
                       ),
                     SizedBox(
@@ -172,7 +176,7 @@ class _FeaturedState extends State<Featured> {
                               .toString(),
                           textAlign: TextAlign.right,
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                       //     Spacer(),
                     ),
                   ],
@@ -187,7 +191,7 @@ class _FeaturedState extends State<Featured> {
                       width: 150,
                       child: Text("Muscle:",
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                       //   Spacer(flex: 3),
                     ),
                     SizedBox(
@@ -195,7 +199,7 @@ class _FeaturedState extends State<Featured> {
                       child: Text(recommendationsList[index].muscle,
                           textAlign: TextAlign.right,
                           style:
-                              new TextStyle(fontSize: 15, color: Colors.white)),
+                              new TextStyle(fontSize: 15, color: Colors.black)),
                       //     Spacer(),
                     ),
                   ],
