@@ -54,7 +54,7 @@ class _SportState extends State<Sport> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Column(children: ts.getContent()),
+            child: Column(children: ts.getContent(context)),
           )
         ],
       );

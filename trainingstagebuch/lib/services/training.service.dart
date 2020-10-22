@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:trainingstagebuch/models/training.model.dart';
+import 'package:trainingstagebuch/screens/sport/trainingDetails.dart';
 import 'package:trainingstagebuch/services/auth.service.dart';
 import 'package:http/http.dart' as http;
 
@@ -26,7 +27,7 @@ class TrainingService {
     }
   }
 
-  List<Widget> getContent() {
+  List<Widget> getContent(BuildContext context) {
     List<Widget> list = [];
     trainings.forEach((training) {
       list.add(DecoratedBox(
@@ -37,6 +38,8 @@ class TrainingService {
           title: Text(training.name),
           subtitle: Text(training.date.toString()),
           trailing: Icon(Icons.edit),
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => TrainingsDetails())),
         ),
       ));
       list.add(SizedBox(
