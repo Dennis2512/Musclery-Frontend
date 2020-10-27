@@ -45,13 +45,9 @@ class _SportState extends State<Sport> {
                   color: Colors.grey[100],
                 ),
                 child: ListTile(
-                  title: Text("Neues Training hinzufügen"),
-                  leading: Icon(Icons.add),
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => TrainingsDetails())),
-                )),
+                    title: Text("Neues Training hinzufügen"),
+                    leading: Icon(Icons.add),
+                    onTap: () => createNewTraining())),
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -60,5 +56,9 @@ class _SportState extends State<Sport> {
         ],
       );
     });
+  }
+
+  createNewTraining() async {
+    await ts.createNewTraining();
   }
 }

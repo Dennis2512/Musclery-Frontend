@@ -38,8 +38,12 @@ class TrainingService {
           title: Text(training.name),
           subtitle: Text(training.date.toString()),
           trailing: Icon(Icons.edit),
-          onTap: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => TrainingsDetails())),
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => TrainingsDetails(
+                        training: training,
+                      ))),
         ),
       ));
       list.add(SizedBox(
@@ -47,5 +51,19 @@ class TrainingService {
       ));
     });
     return list;
+  }
+
+  createNewTraining() async {
+    final token = await _auth.getToken();
+    final res = await http.post(
+        "https://europe-west3-muclery6669.cloudfunctions.net/training",
+        headers: {"authorization": "Bearer " + token},
+        body: {});
+    if (res.statusCode == 200) {
+      dynamic data = json.decode(res.body);
+      trainings.add(Training.fromJson(data));
+    } else {
+      print(res.body);
+    }
   }
 }
