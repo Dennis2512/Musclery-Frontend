@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:trainingstagebuch/screens/sport/createTraining.dart';
+import 'package:trainingstagebuch/screens/sport/trainingDetails.dart';
 import 'package:trainingstagebuch/services/training.service.dart';
 
 class Sport extends StatefulWidget {
@@ -49,7 +50,7 @@ class _SportState extends State<Sport> {
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CreateTraining())),
+                          builder: (context) => TrainingsDetails())),
                 )),
           ),
           Padding(
