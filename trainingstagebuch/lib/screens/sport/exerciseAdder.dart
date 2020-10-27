@@ -37,7 +37,7 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
     await es.fetchExercises();
     setState(() {
       loading = false;
-      list = es.getExerciseTiles();
+      list = es.getExerciseTiles(context);
     });
   }
 
