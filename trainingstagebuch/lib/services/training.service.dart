@@ -17,6 +17,7 @@ class TrainingService {
           "https://europe-west3-muclery6669.cloudfunctions.net/training",
           headers: {"authorization": "Bearer " + token});
       if (res.statusCode == 200) {
+        trainings = [];
         dynamic data = json.decode(res.body);
         data.forEach((doc) => {trainings.add(Training.fromJson(doc))});
       } else {
@@ -36,7 +37,11 @@ class TrainingService {
         ),
         child: ListTile(
           title: Text(training.name),
-          subtitle: Text(training.date.toString()),
+          subtitle: Text(training.date.day.toString() +
+              "." +
+              training.date.month.toString() +
+              "." +
+              training.date.year.toString()),
           trailing: Icon(Icons.edit),
           onTap: () => Navigator.push(
               context,
@@ -53,7 +58,7 @@ class TrainingService {
     return list;
   }
 
-  createNewTraining() async {
+  Future<Training> createNewTraining() async {
     final token = await _auth.getToken();
     final res = await http.post(
         "https://europe-west3-muclery6669.cloudfunctions.net/training",
@@ -61,9 +66,12 @@ class TrainingService {
         body: {});
     if (res.statusCode == 200) {
       dynamic data = json.decode(res.body);
-      trainings.add(Training.fromJson(data));
+      Training train = Training.fromJson(data);
+      trainings.add(train);
+      return train;
     } else {
       print(res.body);
+      return null;
     }
   }
 }

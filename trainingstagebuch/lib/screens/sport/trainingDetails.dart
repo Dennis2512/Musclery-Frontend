@@ -22,6 +22,12 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
+        actions: [
+          IconButton(icon: Icon(Icons.done), onPressed: () => check()),
+          SizedBox(
+            width: 10,
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -39,10 +45,11 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
                       TextFormField(
                         obscureText: false,
                         decoration: InputDecoration(
-                            labelText: "Name",
-                            contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(5))),
+                          labelText: "Name",
+                          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                        ),
                         textInputAction: TextInputAction.next,
                         initialValue: widget.training.name,
                         validator: (value) => value.length > 0
@@ -56,34 +63,57 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
                       SizedBox(
                         height: 20,
                       ),
-                      RaisedButton(
-                        onPressed: null,
-                        color: Colors.blue,
-                        child: Text(widget.training.date.toString()),
-                      ),
                       TextFormField(
                         obscureText: false,
                         decoration: InputDecoration(
-                            labelText: "Description",
+                            labelText: "Beschreibung",
                             contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5))),
                         textInputAction: TextInputAction.next,
-                        validator: (value) => value.length > 0
-                            ? null
-                            : "Dies ist ein Pflichtfeld!",
+                        initialValue: widget.training.beschreibung,
                         onFieldSubmitted: (_) =>
                             FocusScope.of(context).nextFocus(),
+                        onChanged: (value) => setState(
+                            () => widget.training.beschreibung = value),
                       ),
                       SizedBox(
                         height: 20,
                       ),
+                      TextFormField(
+                        obscureText: false,
+                        decoration: InputDecoration(
+                            labelText: "Datum",
+                            suffixIcon: IconButton(
+                                icon: Icon(Icons.calendar_today),
+                                onPressed: () => showDatePicker(
+                                        context: context,
+                                        initialDate: widget.training.date,
+                                        firstDate: DateTime(1900),
+                                        lastDate:
+                                            DateTime(DateTime.now().year + 1))
+                                    .then((value) => {
+                                          if (value != null)
+                                            {
+                                              setState(() => {
+                                                    widget.training.date = value
+                                                  })
+                                            }
+                                        })),
+                            contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5))),
+                        textInputAction: TextInputAction.next,
+                        controller: TextEditingController(text: formatDate()),
+                        readOnly: true,
+                      ),
+                      SizedBox(height: 20),
                     ],
                   ),
                 ),
                 DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Colors.grey[100],
+                      color: Colors.grey[200],
                     ),
                     child: ListTile(
                       leading: Icon(Icons.add),
@@ -102,5 +132,21 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
             )),
       ),
     );
+  }
+
+  check() {
+    if (_formkey.currentState.validate()) {
+      print("valid");
+    } else {
+      print("invalid");
+    }
+  }
+
+  String formatDate() {
+    return widget.training.date.day.toString() +
+        "." +
+        widget.training.date.month.toString() +
+        "." +
+        widget.training.date.year.toString();
   }
 }
