@@ -3,7 +3,7 @@ class Recommendation {
   final String trainingExerciseType;
   final int numberOfSets;
   final int numberOfRepetitionsOrDuration;
-  final String muscle;
+  final List<String> muscle;
   final String imageUrl;
 
   Recommendation(
@@ -13,4 +13,12 @@ class Recommendation {
       this.numberOfRepetitionsOrDuration,
       this.muscle,
       this.imageUrl);
+
+
+static String getMuscleList(List<String> muscles) {
+  String muscleList;
+  muscleList = muscles.join(", ");
+  return muscleList;
+}
+
 }

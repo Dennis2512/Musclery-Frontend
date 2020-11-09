@@ -9,6 +9,7 @@ class Bmi extends StatefulWidget {
 
 class _BmiState extends State<Bmi> {
   final PersonalData data = PersonalData("187 cm", "87 kg", "25", "male", "23");
+  String bmiValue = "";
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -237,7 +238,8 @@ class _BmiState extends State<Bmi> {
                           SizedBox(
                             width: 100,
                             child: Text(
-                              data.bmiValue,
+                              bmiValue =
+                                  PersonalData.calculateBmiValue(187, 90),
                               style: new TextStyle(
                                   fontSize: 14,
                                   color: Color.fromRGBO(123, 100, 229, 100)),
