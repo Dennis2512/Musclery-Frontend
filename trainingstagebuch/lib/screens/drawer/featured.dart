@@ -8,24 +8,25 @@ class Featured extends StatefulWidget {
 
 class _FeaturedState extends State<Featured> {
   final List<Recommendation> recommendationsList = [
-    Recommendation(
-        "Leg Press", "Strength", 3, 15, ["Leg Biceps"], "assets/legpress.png"),
+    Recommendation("Leg Press", "Strength", 3, 15, ["Quadriceps Muscle"],
+        "assets/legpress.png"),
     Recommendation(
         "Pushups",
         "Strength",
         3,
         15,
-        ["Breast Muscle", "Shoulder Muscle", "Biceps Muscle"],
+        ["Breast Muscle", "Shoulder Muscle", "Triceps Muscle"],
         "assets/pushups.png"),
     Recommendation("Treadmill", "Endurance", 3, 5,
-        ["Heart Muscle", "Shoulder Muscle"], "assets/running.png"),
+        ["Heart Muscle", "Fibula Muscle"], "assets/running.png"),
     Recommendation("Shoulder Press", "Strength", 3, 5, ["Shoulder Muscle"],
         "assets/schulter.png"),
   ];
   var stringMuscleList = "";
 
   List<String> musclesToFilterOn = [
-    "Leg Biceps",
+    "Fibula Muscle",
+    "Quadriceps Muscle",
     "Shoulder Muscle",
     "Breast Muscle",
     "Heart Muscle",
@@ -34,7 +35,9 @@ class _FeaturedState extends State<Featured> {
     "Back Muscle",
     "Stomach Muscle"
   ];
+
   List<String> selectedMuscleList = List();
+  final _scrollController = ScrollController();
 
   _showFilterDialog() {
     showDialog(
@@ -42,27 +45,40 @@ class _FeaturedState extends State<Featured> {
         builder: (BuildContext context) {
           //Here we will build the content of the dialog
           return AlertDialog(
-            title: Text("Filter by Muscle"),
+            title: Text("Filter by Muscle", textAlign: TextAlign.center),
             content: Container(
               constraints: BoxConstraints(
-                maxHeight: 100.0,
+                minHeight: 200.0,
+                maxHeight: 300.0,
+                minWidth: 150.0,
+                maxWidth: 300.0,
               ),
-              child: SingleChildScrollView(
-                child: MultiSelectChip(
-                  musclesToFilterOn,
-                  onSelectionChanged: (selectedList) {
-                    setState(() {
-                      selectedMuscleList = selectedList;
-                    });
-                  },
+              child: Scrollbar(
+                controller: _scrollController,
+                isAlwaysShown: true,
+                child: SingleChildScrollView(
+                  controller: _scrollController,
+                  scrollDirection: Axis.vertical,
+                  child: MultiSelectChip(
+                    musclesToFilterOn,
+                    onSelectionChanged: (selectedList) {
+                      setState(() {
+                        selectedMuscleList = selectedList;
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
             actions: <Widget>[
               FlatButton(
-                child: Text("Filter"),
-                onPressed: () => Navigator.of(context).pop(),
-              )
+                  child: Text("Filter"),
+                  onPressed: () {
+                    setState(() {
+                      print(selectedMuscleList);
+                    });
+                    Navigator.of(context).pop();
+                  }),
             ],
           );
         });
@@ -291,13 +307,11 @@ class _FeaturedState extends State<Featured> {
                     child: Row(
                       children: <Widget>[
                         Expanded(
-                          // width: 150,
                           child: Text("Muscle:",
                               style: new TextStyle(
                                   fontSize: 15, color: Colors.black)),
                         ),
                         Expanded(
-                          // width: 150,
                           child: Text(
                               stringMuscleList = Recommendation.getMuscleList(
                                   recommendationsList[index].muscle),
@@ -337,8 +351,18 @@ class _MultiSelectChipState extends State<MultiSelectChip> {
     widget.musclesToFilterOn.forEach((item) {
       choices.add(Container(
         padding: const EdgeInsets.all(2.0),
-        child: ChoiceChip(
-          label: Text(item),
+        child: FilterChip(
+          showCheckmark: true,
+          checkmarkColor: Colors.white,
+          label: Text(
+            item,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          selectedColor: Colors.blueAccent,
+          backgroundColor: Colors.blue[100],
+          shadowColor: Colors.blue[100],
           selected: selectedChoices.contains(item),
           onSelected: (selected) {
             setState(() {
