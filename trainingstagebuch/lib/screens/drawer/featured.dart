@@ -22,7 +22,7 @@ class _FeaturedState extends State<Featured> {
     Recommendation("Shoulder Press", "Strength", 3, 5, ["Shoulder Muscle"],
         "assets/schulter.png"),
   ];
-  var stringMuscleList = "";
+  String stringMuscleList = "";
 
   List<String> musclesToFilterOn = [
     "Fibula Muscle",
