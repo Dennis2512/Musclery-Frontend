@@ -31,6 +31,7 @@
 		C74DD0272565AC560055DC04 /* NewLunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DD0262565AC560055DC04 /* NewLunchView.swift */; };
 		C74DD02C2565AC690055DC04 /* NewDinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DD02B2565AC690055DC04 /* NewDinnerView.swift */; };
 		C74DD0312565B7DC0055DC04 /* NewFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DD0302565B7DB0055DC04 /* NewFoodView.swift */; };
+		C74DD0392565C6220055DC04 /* NewTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74DD0382565C6220055DC04 /* NewTrainingView.swift */; };
 		C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */; };
 		C7A1CE7125274478009D975B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A1CE7025274478009D975B /* ContentView.swift */; };
 		C7A1CE7325274479009D975B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A1CE7225274479009D975B /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		C74DD0262565AC560055DC04 /* NewLunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLunchView.swift; sourceTree = "<group>"; };
 		C74DD02B2565AC690055DC04 /* NewDinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDinnerView.swift; sourceTree = "<group>"; };
 		C74DD0302565B7DB0055DC04 /* NewFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodView.swift; sourceTree = "<group>"; };
+		C74DD0382565C6220055DC04 /* NewTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrainingView.swift; sourceTree = "<group>"; };
 		C7A1CE6B25274478009D975B /* MucleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MucleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A1CE6E25274478009D975B /* MucleryiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MucleryiOSApp.swift; sourceTree = "<group>"; };
 		C7A1CE7025274478009D975B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				C74DD01C2565A5F20055DC04 /* NotesView.swift */,
 				C74DD0172565A4A70055DC04 /* NaehrwerteView.swift */,
 				C7A1CEA625274A75009D975B /* SportView.swift */,
+				C74DD0382565C6220055DC04 /* NewTrainingView.swift */,
 				C7A1CEB325274AB6009D975B /* AnalyseView.swift */,
 				C70BBC8625278BC400749D6B /* SettingsView.swift */,
 				C74BB240252F5AF1000FEDCF /* LoginView.swift */,
@@ -535,6 +538,7 @@
 				C7A1CE6F25274478009D975B /* MucleryiOSApp.swift in Sources */,
 				C74BB26B252F5BD3000FEDCF /* FBAuth.swift in Sources */,
 				C74BB239252F5AA9000FEDCF /* MainView.swift in Sources */,
+				C74DD0392565C6220055DC04 /* NewTrainingView.swift in Sources */,
 				C74DD0182565A4A70055DC04 /* NaehrwerteView.swift in Sources */,
 				C7B10A3E255DC71B00684FBD /* SignInWithAppleView.swift in Sources */,
 				C74DD0312565B7DC0055DC04 /* NewFoodView.swift in Sources */,

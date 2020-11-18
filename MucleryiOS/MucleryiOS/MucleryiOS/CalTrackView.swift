@@ -13,13 +13,13 @@ struct CalTrackView: View {
     @State private var currentCal = 0
     @State private var leftCal = 2400
     @State private var breakfast = 0
-    @State private var breakfastCal = 0
+    @State private var breakfastCal = 900
     @State private var lunch = 0
     @State private var lunchCal = 0
     @State private var dinner = 0
     @State private var dinnerCal = 0
     var body: some View {
-        NavigationView{
+        //NavigationView{
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
                 Rectangle()
                     .frame(height: /*@START_MENU_TOKEN@*/85.0/*@END_MENU_TOKEN@*/)
@@ -32,6 +32,7 @@ struct CalTrackView: View {
                             .foregroundColor(Color.white)
                             .offset(y: -30)
                     )
+                NavigationView{
                 ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
                     Rectangle()
                         .foregroundColor(.clear)
@@ -240,9 +241,11 @@ struct CalTrackView: View {
                .padding(.bottom, -180)
               
                 Spacer()
+            }
+                .offset(y: -58)
             })
-            .offset(y: -95)
-        }
+            //.offset(y: -95)
+        //}
     }
 }
 
