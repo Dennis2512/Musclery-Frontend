@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var selection = 0
     var body: some View {
+
         VStack {
             TabView(selection: $selection){
                 CalTrackView()
@@ -45,7 +46,6 @@ struct MainView: View {
                 }
                 .tag(3)
             }
-            .accentColor(.black)
         }
     }
 }
