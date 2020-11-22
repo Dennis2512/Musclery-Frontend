@@ -237,7 +237,7 @@ struct CalTrackView: View {
                     })
                     .offset(y: 10)
                 })
-                .offset(y: -58)
+               // .offset(y: -58)
                .padding(.bottom, -180)
               
                 Spacer()

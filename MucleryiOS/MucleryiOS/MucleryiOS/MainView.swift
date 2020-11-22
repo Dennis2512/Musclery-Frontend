@@ -13,6 +13,14 @@ struct MainView: View {
 
         VStack {
             TabView(selection: $selection){
+                FeaturedView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "star.fill")
+                            Text("Featured")
+                        }
+                    }
+                    .tag(0)
                 CalTrackView()
                     .tabItem {
                         VStack {
@@ -20,7 +28,7 @@ struct MainView: View {
                             Text("CalTrack")
                         }
                     }
-                    .tag(0)
+                    .tag(1)
                 SportView()
                     .tabItem {
                         VStack {
@@ -28,7 +36,7 @@ struct MainView: View {
                             Text("Sport")
                         }
                     }
-                    .tag(1)
+                    .tag(2)
                 AnalyseView()
                 .tabItem {
                     VStack {
@@ -36,7 +44,7 @@ struct MainView: View {
                         Text("Analyse")
                     }
                 }
-                .tag(2)
+                .tag(3)
                 SettingsView()
                 .tabItem {
                     VStack {
@@ -44,7 +52,7 @@ struct MainView: View {
                         Text("Settings")
                     }
                 }
-                .tag(3)
+                .tag(4)
             }
         }
     }
