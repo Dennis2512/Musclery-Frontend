@@ -33,58 +33,84 @@ struct SettingsView: View {
                             .foregroundColor(Color.white)
                             .offset(y: -30)
                     )
-                //ScrollView
-                ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
-                        //Placeholder
-                        Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .border(Color.gray, width: 0.5)
-                                .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 260, content: {
-                                    /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
-                                        .foregroundColor(.black)
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.black)
-                                }))
-                        }
-                        .padding(.bottom, -9.0)
-                        .padding(.top, 0.0)
-                        //Profile
-                        Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .border(Color.gray, width: 0.5)
-                                .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 300.0, content: {
-                                    Text("Profile")
-                                        .foregroundColor(.black)
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.black)
-                                }))
-                        }
-                        .padding(.bottom, -9.0)
-                        .padding(.top, 0.0)
-                        //Logout
-                        Button(action: signOut) {
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .border(Color.gray, width: 0.5)
-                                .frame(width: 450.0, height: 50.0)
-                                .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 283.0, content: {
-                                    Text("Log out")
-                                        .foregroundColor(.red)
-                                    Image(systemName: "delete.right")
-                                        .foregroundColor(.red)
-                                }))
-                        }
-                        .padding(.bottom, -9.0)
-                        .padding(.top, 0.0)
+                NavigationView{
+                    //ScrollView
+                    ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
+                        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+                            //personal data
+                            NavigationLink(
+                                destination: PersonalSettingsView(),
+                                label: {
+                                    Rectangle()
+                                        .foregroundColor(.white)
+                                        .border(Color.gray, width: 0.5)
+                                        .frame(width: 450.0, height: 50.0)
+                                        .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 245, content: {
+                                            Text("Personal Data")
+                                                .foregroundColor(.black)
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(.black)
+                                        }))
+                                })
+                                .padding(.bottom, -9.0)
+                                .padding(.top, 0.0)
+                            //Profile
+                            NavigationLink(
+                                destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/,
+                                label: {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .border(Color.gray, width: 0.5)
+                                    .frame(width: 450.0, height: 50.0)
+                                    .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 312.0, content: {
+                                        Text("Profil")
+                                            .foregroundColor(.black)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                    }))
+                            })
+                            .padding(.bottom, -9.0)
+                            .padding(.top, 0.0)
+                            NavigationLink(
+                                destination: BMIView(),
+                                label: {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .border(Color.gray, width: 0.5)
+                                    .frame(width: 450.0, height: 50.0)
+                                    .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 322.0, content: {
+                                        Text("BMI")
+                                            .foregroundColor(.black)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                    }))
+                            })
+                            .padding(.bottom, -9.0)
+                            .padding(.top, 0.0)
+                            
+                            
+                        })
+                        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+                            //Logout
+                            Button(action: signOut) {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .border(Color.gray, width: 0.5)
+                                    .frame(width: 450.0, height: 50.0)
+                                    .overlay(HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 283.0, content: {
+                                        Text("Log out")
+                                            .foregroundColor(.red)
+                                        Image(systemName: "delete.right")
+                                            .foregroundColor(.red)
+                                    }))
+                            }
+                            .padding(.bottom, -9.0)
+                            .padding(.top, 0.0)
+                        })
                         
                     })
-                    
-                })
+                    //.offset(y: -58) nav fehler
+                }
                 .offset(y: -58)
             })
         }

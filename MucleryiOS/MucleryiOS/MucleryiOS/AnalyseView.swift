@@ -23,7 +23,7 @@ struct AnalyseView: View {
                         .offset(y: -30)
                 )
             ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/, content: {
-                Rectangle()
+                Text("Analyse")
             })
             .offset(y: -58)
             //ToDo

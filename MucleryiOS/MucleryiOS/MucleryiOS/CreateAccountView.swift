@@ -30,7 +30,11 @@ struct CreateAccountView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .offset(y: -270)
+                    .opacity(0)
                 Group{
+                        SignInWithAppleView()
+                            .frame(width: 280.0, height: 30.0)
+                    
                     Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
                         RoundedRectangle(cornerRadius: 11, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
                             .frame(width: 280.0, height: 30.0)

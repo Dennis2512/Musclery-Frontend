@@ -25,6 +25,7 @@ struct ContentView: View {
         }
         .onAppear {
             self.userInfo.configureFirebaseStateDidChange()
+            
         }
         
     }
