@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:trainingstagebuch/models/exercise.model.dart';
 import 'package:http/http.dart' as http;
+import 'package:trainingstagebuch/models/training.model.dart';
 import 'package:trainingstagebuch/screens/sport/exerciseDetails.dart';
 
 class ExerciseService {
@@ -18,7 +19,6 @@ class ExerciseService {
         js.forEach((element) {
           exercises.add(Exercise.fromJson(element));
         });
-        print(exercises.length.toString());
       } else {
         print(res.body);
       }
@@ -27,7 +27,7 @@ class ExerciseService {
     }
   }
 
-  List<Widget> getExerciseTiles(context) {
+  List<Widget> getExerciseTiles(context, Training training, dynamic callback) {
     List<Widget> list = [];
     exercises.forEach((element) {
       list.add(ListTile(
@@ -39,6 +39,8 @@ class ExerciseService {
               MaterialPageRoute(
                 builder: (context) => ExerciseDetails(
                   exercise: element,
+                  training: training,
+                  updateCallback: callback,
                 ),
               ))
         },

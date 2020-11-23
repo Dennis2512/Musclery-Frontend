@@ -51,7 +51,7 @@ class _SportState extends State<Sport> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Column(children: ts.getContent(context)),
+            child: Column(children: ts.getContent(context, update)),
           )
         ],
       );
@@ -74,30 +74,35 @@ class _SportState extends State<Sport> {
           MaterialPageRoute(
             builder: (context) => TrainingsDetails(
               training: train,
+              callback: update,
             ),
           ));
-      await ts.fetchTrainings();
-      setState(() {
-        content = Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                  ),
-                  child: ListTile(
-                      title: Text("Neues Training hinzufügen"),
-                      leading: Icon(Icons.add),
-                      onTap: () => createNewTraining())),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Column(children: ts.getContent(context)),
-            )
-          ],
-        );
-      });
+      await update();
     }
+  }
+
+  update() async {
+    await ts.fetchTrainings();
+    setState(() {
+      content = Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                ),
+                child: ListTile(
+                    title: Text("Neues Training hinzufügen"),
+                    leading: Icon(Icons.add),
+                    onTap: () => createNewTraining())),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child: Column(children: ts.getContent(context, update)),
+          )
+        ],
+      );
+    });
   }
 }

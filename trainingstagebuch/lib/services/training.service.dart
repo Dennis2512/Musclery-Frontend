@@ -28,7 +28,7 @@ class TrainingService {
     }
   }
 
-  List<Widget> getContent(BuildContext context) {
+  List<Widget> getContent(BuildContext context, Function callback) {
     List<Widget> list = [];
     trainings.forEach((training) {
       list.add(DecoratedBox(
@@ -47,8 +47,30 @@ class TrainingService {
               context,
               MaterialPageRoute(
                   builder: (context) => TrainingsDetails(
-                        training: training,
+                        training: training.copy(),
+                        callback: callback,
                       ))),
+          onLongPress: () => showDialog(
+              context: context,
+              builder: (context) => SimpleDialog(
+                    title: Text(training.name),
+                    contentPadding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    children: [
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                            border: Border(
+                                top: BorderSide(color: Colors.grey[100]))),
+                        child: ListTile(
+                          title: Text("Eintrag löschen"),
+                          leading: Icon(Icons.delete),
+                          onTap: () => {
+                            deleteTraining(training, callback),
+                            Navigator.pop(context)
+                          },
+                        ),
+                      )
+                    ],
+                  )),
         ),
       ));
       list.add(SizedBox(
@@ -67,11 +89,35 @@ class TrainingService {
     if (res.statusCode == 200) {
       dynamic data = json.decode(res.body);
       Training train = Training.fromJson(data);
-      trainings.add(train);
       return train;
     } else {
       print(res.body);
       return null;
+    }
+  }
+
+  updateTraining(Training t) async {
+    final token = await _auth.getToken();
+    final String trainingString = json.encode(t.toJson());
+    final res = await http.post(
+        "https://europe-west3-muclery6669.cloudfunctions.net/training",
+        headers: {"authorization": "Bearer " + token},
+        body: {"training": trainingString});
+    if (res.statusCode != 200) {
+      print(res.body);
+    }
+  }
+
+  deleteTraining(Training t, Function callback) async {
+    final token = await _auth.getToken();
+    final res = await http.delete(
+      "https://europe-west3-muclery6669.cloudfunctions.net/training",
+      headers: {"authorization": "Bearer " + token, "id": t.id},
+    );
+    if (res.statusCode == 200) {
+      await callback();
+    } else {
+      print(res.body);
     }
   }
 }

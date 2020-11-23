@@ -1,19 +1,15 @@
-import 'dart:convert';
-
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:trainingstagebuch/models/day.model.dart';
-import 'package:trainingstagebuch/screens/essen/foodCreator.dart';
-import 'package:trainingstagebuch/screens/essen/chipDialog.dart';
+import 'package:trainingstagebuch/models/training.model.dart';
 import 'package:trainingstagebuch/services/exercise.service.dart';
 import 'package:trainingstagebuch/services/food.service.dart';
 
 class ExerciseAdder extends StatefulWidget {
   final String title;
-  final Day day;
+  final Training training;
   final updateCallback;
-  ExerciseAdder({this.title, this.day, this.updateCallback});
+  ExerciseAdder({this.title, this.updateCallback, this.training});
   @override
   _ExerciseAdderState createState() => _ExerciseAdderState();
 }
@@ -37,13 +33,9 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
     await es.fetchExercises();
     setState(() {
       loading = false;
-      list = es.getExerciseTiles(context);
+      list =
+          es.getExerciseTiles(context, widget.training, widget.updateCallback);
     });
-  }
-
-  update() {
-    widget.updateCallback();
-    Navigator.pop(context);
   }
 
   @override
