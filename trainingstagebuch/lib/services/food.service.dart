@@ -11,7 +11,7 @@ class FoodService {
   Future<void> fetchFood() async {
     try {
       food = [];
-      var res = await http
+      http.Response res = await http
           .get("https://europe-west3-muclery6669.cloudfunctions.net/food");
       if (res.statusCode == 200) {
         final dynamic js = json.decode(res.body);
@@ -67,7 +67,7 @@ class FoodService {
 
   Future<String> addFood(Food food) async {
     try {
-      var res = await http.post(
+      http.Response res = await http.post(
           "https://europe-west3-muclery6669.cloudfunctions.net/food",
           body: {"food": json.encode(food.toJson())});
 
@@ -81,40 +81,6 @@ class FoodService {
       print(err);
       return null;
     }
-  }
-
-  searchFood(String code) async {
-    // todo get food api data from https://platform.fatsecret.com/api/Default.aspx?screen=rapiref2&cpc=true&method=food.find_id_for_barcode
-    // final String clientID = "b6449b877393465c9b0f8f7f6df0ef3b";
-    // final String clientSecret = "2aa2bfd0c51448bebd95044877827032";
-    print(code);
-    /*
-    try {
-      final tokenRequest =
-          await http.post("https://oauth.fatsecret.com/connect/token", body: {
-        "grant_type": "client_credentials",
-        "client_id": clientID,
-        "client_secret": clientSecret,
-        "scope": "basic"
-      });
-      final token = json.decode(tokenRequest.body)['access_token'];
-      print(token);
-      final foodRequest = await http.post(
-          "https://platform.fatsecret.com/rest/server.api?method=food.find_id_for_barcode&barcode=" +
-              code +
-              "&format=json",
-          headers: {
-            "Authentication": "Bearer " + tokenRequest.body
-          },
-          body: {
-            "oauth_signature_method": "HMAC-SHA1",
-            "oauth_consumer_key": "b6449b877393465c9b0f8f7f6df0ef3b"
-          });
-      print(foodRequest.body);
-      //final food_id = json.decode(food)
-    } catch (err) {
-      print(err);
-    } */
   }
 
   List<Food> filter(String filter, List<Food> list) {

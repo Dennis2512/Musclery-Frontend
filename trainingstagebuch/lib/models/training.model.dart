@@ -28,11 +28,11 @@ class Training {
         "exercises": exercises
       };
 
-  static transformDate(dynamic date) {
+  static DateTime transformDate(dynamic date) {
     return new Timestamp(date['_seconds'], date['_nanoseconds']).toDate();
   }
 
-  static transformExercises(dynamic exs) {
+  static List<Exercise> transformExercises(dynamic exs) {
     List<Exercise> res = [];
     exs.forEach((exer) {
       res.add(Exercise.fromJson(exer));

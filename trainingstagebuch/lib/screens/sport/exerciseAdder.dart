@@ -1,7 +1,10 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:trainingstagebuch/models/exercise.model.dart';
 import 'package:trainingstagebuch/models/training.model.dart';
+import 'package:trainingstagebuch/screens/sport/chipDialog2.dart';
+import 'package:trainingstagebuch/screens/sport/exerciseCreator.dart';
 import 'package:trainingstagebuch/services/exercise.service.dart';
 import 'package:trainingstagebuch/services/food.service.dart';
 
@@ -20,7 +23,7 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
   final _controller = TextEditingController();
   List<Widget> list = [];
   bool loading = true;
-  String regex;
+  String regex = "";
   List<String> regexcat = [];
   @override
   void initState() {
@@ -33,8 +36,24 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
     await es.fetchExercises();
     setState(() {
       loading = false;
-      list =
-          es.getExerciseTiles(context, widget.training, widget.updateCallback);
+      list = es.getExerciseTiles(
+          context, widget.training, widget.updateCallback, regex, regexcat);
+    });
+  }
+
+  filter(String regex) {
+    setState(() {
+      regex = regex;
+      list = es.getExerciseTiles(
+          context, widget.training, widget.updateCallback, regex, regexcat);
+    });
+  }
+
+  filterCallback(List<String> cats) {
+    setState(() {
+      regexcat = cats;
+      list = es.getExerciseTiles(
+          context, widget.training, widget.updateCallback, regex, regexcat);
     });
   }
 
@@ -50,7 +69,15 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
           actions: [
             IconButton(
               icon: Icon(Icons.add),
-              onPressed: () => {},
+              onPressed: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ExerciseCreator(
+                        exerciseAdderCallback: created,
+                      ),
+                    ))
+              },
             ),
             SizedBox(width: 10),
           ],
@@ -83,9 +110,11 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
                                 prefixIcon: Icon(Icons.search),
                                 suffixIcon: IconButton(
                                   icon: Icon(Icons.clear),
-                                  onPressed: () => {_controller.clear()},
+                                  onPressed: () =>
+                                      {_controller.clear(), filter("")},
                                 )),
                             autofocus: false,
+                            onChanged: (value) => filter(value),
                           )),
                     ],
                   ),
@@ -105,22 +134,20 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
                         width: 20,
                       ),
                       InkWell(
-                        child: Badge(
-                          child: Chip(
-                            label: Icon(Icons.filter_list),
-                            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Badge(
+                            child: Chip(
+                              label: Icon(Icons.filter_list),
+                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            ),
+                            badgeContent: Text(regexcat.length.toString()),
+                            badgeColor: Colors.blue,
                           ),
-                          badgeContent: Text(regexcat.length.toString()),
-                          badgeColor: Colors.blue,
-                        ),
-                        onTap: () =>
-                            {}, /*showDialog(
-                            context: context,
-                            builder: (context) => ChipDialog(
-                                  categories: List<String>.from(regexcat),
-                                  callback: filterCallback,
-                                ))*/
-                      )
+                          onTap: () => showDialog(
+                              context: context,
+                              builder: (context) => ChipDialog2(
+                                    categories: List<String>.from(regexcat),
+                                    callback: filterCallback,
+                                  )))
                     ],
                     mainAxisAlignment: MainAxisAlignment.start,
                   ),
@@ -141,5 +168,15 @@ class _ExerciseAdderState extends State<ExerciseAdder> {
             ],
           ),
         ));
+  }
+
+  created(Exercise exercise) async {
+    exercise.id = await es.addExercise(exercise);
+    if (exercise.id != null) es.exercises.add(exercise);
+    setState(() => {
+          list = es.getExerciseTiles(
+              context, widget.training, widget.updateCallback, regex, regexcat)
+        });
+    Navigator.pop(context);
   }
 }

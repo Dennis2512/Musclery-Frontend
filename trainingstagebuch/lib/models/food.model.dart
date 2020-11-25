@@ -87,4 +87,19 @@ class Food {
   double getProteins() {
     return (protein * unit.factor * (amount / 100));
   }
+
+  Food copy() {
+    return new Food(
+        amount: amount,
+        calories: calories,
+        carbs: carbs,
+        categories: categories,
+        description: description,
+        fats: fats,
+        name: name,
+        protein: protein,
+        unit: unit,
+        units: units,
+        id: id);
+  }
 }

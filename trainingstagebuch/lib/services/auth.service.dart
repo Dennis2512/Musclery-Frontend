@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  Future signIn(String email, String password) async {
+  Future<AuthResult> signIn(String email, String password) async {
     try {
       AuthResult res = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -23,24 +23,6 @@ class AuthService {
     }
   }
 
-  Future resetPassword(String email) async {
-    try {
-      return await _auth.sendPasswordResetEmail(email: email);
-    } catch (err) {
-      if (err.toString().contains('ERROR_INVALID_EMAIL')) {
-        Fluttertoast.showToast(
-            msg: "Operation fehlgeschlagen. Fehlerhafte Email.");
-      } else if (err.toString().contains('ERROR_USER_NOT_FOUND')) {
-        Fluttertoast.showToast(
-            msg:
-                "Operation fehlgeschlagen. Email konnte nicht gefunden werden.");
-      } else {
-        Fluttertoast.showToast(msg: 'Unknown error.');
-      }
-      return null;
-    }
-  }
-
   Stream<FirebaseUser> get user {
     return _auth.onAuthStateChanged;
   }
@@ -54,12 +36,22 @@ class AuthService {
     return (await user.getIdToken()).token;
   }
 
-  Future signOut() async {
+  Future<void> signOut() async {
     try {
-      return await _auth.signOut();
+      await _auth.signOut();
     } catch (err) {
       print(err);
-      return null;
+    }
+  }
+
+  Future<bool> register(String email, String password) async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      return true;
+    } catch (err) {
+      print(err);
+      return false;
     }
   }
 }

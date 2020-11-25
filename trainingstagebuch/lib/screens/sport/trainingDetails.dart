@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:trainingstagebuch/models/exercise.model.dart';
 import 'package:trainingstagebuch/models/training.model.dart';
@@ -17,7 +16,7 @@ class TrainingsDetails extends StatefulWidget {
 }
 
 class _TrainingsDetailsState extends State<TrainingsDetails> {
-  final _formkey = GlobalKey<FormState>();
+  final _detailsformkey = GlobalKey<FormState>();
   final TrainingService ts = TrainingService();
   bool loading = false;
   List<Widget> content;
@@ -95,7 +94,7 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
               children: [
                 Form(
                   autovalidateMode: AutovalidateMode.disabled,
-                  key: _formkey,
+                  key: _detailsformkey,
                   child: Column(
                     children: [
                       SizedBox(
@@ -200,7 +199,7 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
     setState(() {
       loading = true;
     });
-    if (_formkey.currentState.validate()) {
+    if (_detailsformkey.currentState.validate()) {
       await ts.updateTraining(widget.training);
       await this.widget.callback();
       Navigator.pop(context);
@@ -208,7 +207,9 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
   }
 
   update(Exercise e) {
-    setState(() {}); // just to update screen
+    setState(() {
+      widget.training.exercises.add(e);
+    });
   }
 
   String formatDate() {
@@ -225,8 +226,8 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
         height: 20,
       )
     ];
-    widget.training.exercises.forEach((element) {
-      // name
+    widget.training.exercises.reversed.forEach((element) {
+      // header
       list.add(DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -235,6 +236,11 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
         ),
         child: ListTile(
           title: Text(element.name),
+          trailing: IconButton(
+            icon: Icon(Icons.delete_forever, color: Colors.grey),
+            onPressed: () =>
+                setState(() => {widget.training.exercises.remove(element)}),
+          ),
         ),
       ));
       // liste der sätze
@@ -282,9 +288,14 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
                   icon: Icon(Icons.remove, color: Colors.grey[600]),
                   padding: EdgeInsets.all(0),
                   constraints: BoxConstraints(minWidth: 0),
-                  onPressed: () => setState(() => {
-                        setelement.reps = setelement.reps - 1,
-                      }),
+                  onPressed: () => {
+                    if (setelement.reps > 0)
+                      {
+                        setState(() => {
+                              setelement.reps = setelement.reps - 1,
+                            })
+                      }
+                  },
                 ),
                 SizedBox(
                   width: 50,
@@ -301,6 +312,9 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
                         }),
                   ),
                 ),
+                SizedBox(
+                  width: 5,
+                ),
                 IconButton(
                   icon: Icon(Icons.add, color: Colors.grey[600]),
                   padding: EdgeInsets.all(0),
@@ -309,7 +323,7 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
                         setelement.reps = setelement.reps + 1,
                       }),
                 ),
-                SizedBox(width: 5),
+                SizedBox(width: 7),
                 IconButton(
                   icon: Icon(Icons.delete, color: Colors.grey),
                   onPressed: () =>
@@ -323,7 +337,12 @@ class _TrainingsDetailsState extends State<TrainingsDetails> {
       // satz hinzufügen
       list.add(InkWell(
         onTap: () => {
-          setState(() => {element.sets.add(new Set(gewicht: 0, reps: 0))})
+          setState(() => {
+                element.sets.length == 0
+                    ? element.sets.add(new Set(gewicht: 0, reps: 0))
+                    : element.sets
+                        .add(element.sets[element.sets.length - 1].copy())
+              })
         },
         child: DecoratedBox(
           decoration: BoxDecoration(

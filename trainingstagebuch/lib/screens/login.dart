@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:trainingstagebuch/screens/register.dart';
 import 'package:trainingstagebuch/services/auth.service.dart';
 
 class Login extends StatefulWidget {
@@ -10,11 +11,11 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final AuthService _auth = AuthService();
-  final _formkey = GlobalKey<FormState>();
+  final _loginformkey = GlobalKey<FormState>();
   String _email = "";
   String _password = "";
   bool loading = false;
-
+  bool login = true;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -22,13 +23,14 @@ class _LoginState extends State<Login> {
       padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
       child: Form(
         autovalidateMode: AutovalidateMode.disabled,
-        key: _formkey,
+        key: _loginformkey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
-              image: AssetImage("assets/logo_sport.png"),
+              image: AssetImage("assets/logo_weiß.jpeg"),
+              height: 300,
             ),
             SizedBox(
               height: 40,
@@ -59,7 +61,7 @@ class _LoginState extends State<Login> {
               validator: (input) =>
                   input.length >= 6 ? null : "Invalid Password.",
               onChanged: (input) => {setState(() => this._password = input)},
-              onFieldSubmitted: (_) => _login(),
+              onFieldSubmitted: (_) => login ? _login() : _register(),
             ),
             SizedBox(
               height: 30,
@@ -72,19 +74,35 @@ class _LoginState extends State<Login> {
                 height: 60,
                 minWidth: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                onPressed: () => {FocusScope.of(context).unfocus(), _login()},
+                onPressed: () => {
+                  FocusScope.of(context).unfocus(),
+                  login ? _login() : _register()
+                },
                 child: loading
                     ? SpinKitCircle(
                         color: Colors.black,
                         size: 30,
                       )
                     : Text(
-                        "Login",
+                        login ? "Login" : "Registrieren",
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            InkWell(
+              child: Text(
+                login ? "Registrieren" : "Login",
+                style: TextStyle(
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              onTap: () => setState(() => {login = !login}),
             )
           ],
         ),
@@ -93,7 +111,7 @@ class _LoginState extends State<Login> {
   }
 
   void _login() async {
-    if (this._formkey.currentState.validate()) {
+    if (this._loginformkey.currentState.validate()) {
       setState(() {
         loading = true;
       });
@@ -102,11 +120,23 @@ class _LoginState extends State<Login> {
         setState(() {
           this.loading = false;
         });
-        this._formkey.currentState.reset();
+        this._loginformkey.currentState.reset();
         this._email = "";
         this._password = "";
         FocusScope.of(context).previousFocus();
       }
+    }
+  }
+
+  void _register() async {
+    if (this._loginformkey.currentState.validate()) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Register(
+                    email: _email,
+                    password: _password,
+                  )));
     }
   }
 }

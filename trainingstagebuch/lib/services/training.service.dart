@@ -12,8 +12,8 @@ class TrainingService {
 
   Future<void> fetchTrainings() async {
     try {
-      final token = await _auth.getToken();
-      var res = await http.get(
+      final String token = await _auth.getToken();
+      http.Response res = await http.get(
           "https://europe-west3-muclery6669.cloudfunctions.net/training",
           headers: {"authorization": "Bearer " + token});
       if (res.statusCode == 200) {
@@ -81,8 +81,8 @@ class TrainingService {
   }
 
   Future<Training> createNewTraining() async {
-    final token = await _auth.getToken();
-    final res = await http.post(
+    final String token = await _auth.getToken();
+    http.Response res = await http.post(
         "https://europe-west3-muclery6669.cloudfunctions.net/training",
         headers: {"authorization": "Bearer " + token},
         body: {});
@@ -96,10 +96,10 @@ class TrainingService {
     }
   }
 
-  updateTraining(Training t) async {
-    final token = await _auth.getToken();
+  Future<void> updateTraining(Training t) async {
+    final String token = await _auth.getToken();
     final String trainingString = json.encode(t.toJson());
-    final res = await http.post(
+    http.Response res = await http.post(
         "https://europe-west3-muclery6669.cloudfunctions.net/training",
         headers: {"authorization": "Bearer " + token},
         body: {"training": trainingString});
@@ -108,9 +108,9 @@ class TrainingService {
     }
   }
 
-  deleteTraining(Training t, Function callback) async {
-    final token = await _auth.getToken();
-    final res = await http.delete(
+  Future<void> deleteTraining(Training t, Function callback) async {
+    final String token = await _auth.getToken();
+    http.Response res = await http.delete(
       "https://europe-west3-muclery6669.cloudfunctions.net/training",
       headers: {"authorization": "Bearer " + token, "id": t.id},
     );

@@ -17,7 +17,7 @@ class CaloriesService {
 
   // change Date
 
-  Future setDate(DateTime date) async {
+  Future<void> setDate(DateTime date) async {
     _time = date;
     await fetchDay();
   }
@@ -33,9 +33,9 @@ class CaloriesService {
   }
 
   String dateToString(DateTime time) {
-    final day = time.day;
-    final month = time.month;
-    final year = time.year;
+    final int day = time.day;
+    final int month = time.month;
+    final int year = time.year;
     return "$day.$month.$year";
   }
 
@@ -53,8 +53,8 @@ class CaloriesService {
     try {
       _day = dayExists();
       if (_day == null) {
-        final token = await _auth.getToken();
-        var res = await http.get(
+        final String token = await _auth.getToken();
+        http.Response res = await http.get(
             "https://europe-west3-muclery6669.cloudfunctions.net/calories",
             headers: {
               "authorization": "Bearer " + token,
@@ -74,8 +74,8 @@ class CaloriesService {
 
   Future<void> updateDay() async {
     try {
-      final token = await _auth.getToken();
-      final res = await http.post(
+      final String token = await _auth.getToken();
+      await http.post(
           "https://europe-west3-muclery6669.cloudfunctions.net/calories",
           headers: {"authorization": "Bearer " + token},
           body: json.encode(_day.toJson()));

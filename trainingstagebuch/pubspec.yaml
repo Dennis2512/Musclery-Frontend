@@ -37,7 +37,8 @@ dependencies:
   percent_indicator: ^2.1.6
   barcode_scan: ^3.0.1
   badges: ^1.1.1
-  flutter_spinbox: ^0.2.1
+  syncfusion_flutter_sliders: ^18.3.51-beta
+  fl_chart: ^0.12.0
 
 dev_dependencies:
   flutter_test:

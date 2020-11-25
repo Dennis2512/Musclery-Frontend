@@ -26,7 +26,7 @@ class EssenState extends State<Essen> {
       _statecontent = SpinKitThreeBounce(color: Colors.blue);
     });
     await _cs.setDate(date);
-    if (_cs.getDay() != null) {
+    if (_cs.getDay() != null && this.mounted) {
       setState(() {
         _statecontent = Content(
           day: _cs.getDay(),

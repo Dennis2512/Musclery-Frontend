@@ -7,7 +7,7 @@ class CreateTraining extends StatefulWidget {
 }
 
 class _CreateTrainingState extends State<CreateTraining> {
-  final _formkey = GlobalKey<FormState>();
+  final _trainingformkey = GlobalKey<FormState>();
   Training training = new Training(
       name: "Training",
       date: DateTime(
@@ -28,7 +28,7 @@ class _CreateTrainingState extends State<CreateTraining> {
             padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
             child: Form(
               autovalidateMode: AutovalidateMode.disabled,
-              key: _formkey,
+              key: _trainingformkey,
               child: Column(
                 children: [
                   SizedBox(

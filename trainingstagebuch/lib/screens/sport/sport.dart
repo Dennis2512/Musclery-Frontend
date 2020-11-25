@@ -35,27 +35,29 @@ class _SportState extends State<Sport> {
 
   initTraining() async {
     await ts.fetchTrainings();
-    setState(() {
-      content = Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                ),
-                child: ListTile(
-                    title: Text("Neues Training hinzufügen"),
-                    leading: Icon(Icons.add),
-                    onTap: () => createNewTraining())),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Column(children: ts.getContent(context, update)),
-          )
-        ],
-      );
-    });
+    if (this.mounted) {
+      setState(() {
+        content = Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                  ),
+                  child: ListTile(
+                      title: Text("Neues Training hinzufügen"),
+                      leading: Icon(Icons.add),
+                      onTap: () => createNewTraining())),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: Column(children: ts.getContent(context, update)),
+            )
+          ],
+        );
+      });
+    }
   }
 
   createNewTraining() async {

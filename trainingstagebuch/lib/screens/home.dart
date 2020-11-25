@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:trainingstagebuch/screens/analyse.dart';
+import 'package:trainingstagebuch/screens/analyse/analyse.dart';
 import 'package:trainingstagebuch/screens/drawer/bmi.dart';
 import 'package:trainingstagebuch/screens/drawer/profile.dart';
 import 'package:trainingstagebuch/screens/essen/essen.dart';
-import 'package:trainingstagebuch/screens/drawer/settings.dart';
 import 'package:trainingstagebuch/screens/drawer/featured.dart';
 import 'package:trainingstagebuch/screens/sport/sport.dart';
 import 'package:trainingstagebuch/services/auth.service.dart';
@@ -24,7 +23,7 @@ class _HomeState extends State<Home> {
     List content = [essen, sport, analyse];
     return Scaffold(
       appBar: AppBar(
-        title: Text("Trainingstagebuch"),
+        title: Text("Musclery"),
       ),
       drawer: Drawer(
         child: Column(
@@ -32,10 +31,10 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 150,
               child: Container(
-                color: Colors.blue,
+                color: Colors.blue[500],
                 child: Center(
                   child: Image(
-                    image: AssetImage("assets/logo_sport.png"),
+                    image: AssetImage("assets/logo_blau.jpeg"),
                   ),
                 ),
               ),
@@ -44,13 +43,6 @@ class _HomeState extends State<Home> {
               height: 10,
             ),
             ListTile(
-              title: Text("Einstellungen"),
-              leading: Icon(Icons.settings),
-              onTap: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Settings())),
-            ),
-            Divider(),
-            ListTile(
               title: Text("Profil"),
               leading: Icon(Icons.person),
               onTap: () => Navigator.push(
@@ -58,7 +50,7 @@ class _HomeState extends State<Home> {
             ),
             Divider(),
             ListTile(
-              title: Text("Featured"),
+              title: Text("Vorschläge"),
               leading: Icon(Icons.star),
               onTap: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Featured())),

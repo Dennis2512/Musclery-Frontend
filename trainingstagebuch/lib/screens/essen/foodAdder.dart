@@ -76,7 +76,7 @@ class _FoodAdderState extends State<FoodAdder> {
 
   scan() async {
     final ScanResult res = await BarcodeScanner.scan();
-    await fs.searchFood(res.rawContent);
+    print(res.rawContent);
   }
 
   filter(String regex) {

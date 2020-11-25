@@ -29,8 +29,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
                 )
               : IconButton(
                   icon: Icon(Icons.done),
-                  onPressed: () =>
-                      {widget.training.exercises.add(widget.exercise), save()},
+                  onPressed: () => save(),
                 ),
           SizedBox(
             width: 10,
@@ -72,11 +71,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
   }
 
   void save() async {
-    setState(() {
-      loading = true;
-    });
-    await widget.ts.updateTraining(widget.training);
-    widget.updateCallback(null);
+    widget.updateCallback(widget.exercise);
     Navigator.pop(context);
     Navigator.pop(context);
   }

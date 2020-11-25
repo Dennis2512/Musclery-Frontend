@@ -21,7 +21,7 @@ class _FoodCreatorState extends State<FoodCreator> {
         new Unit(name: "Ounce", factor: 0.035274)
       ],
       categories: []);
-  final _formkey = GlobalKey<FormState>();
+  final _foodformkey = GlobalKey<FormState>();
   bool loading = false;
   List<Widget> chips;
 
@@ -106,7 +106,7 @@ class _FoodCreatorState extends State<FoodCreator> {
             padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
             child: Form(
               autovalidate: false,
-              key: _formkey,
+              key: _foodformkey,
               child: Column(
                 children: [
                   SizedBox(
@@ -276,7 +276,7 @@ class _FoodCreatorState extends State<FoodCreator> {
     setState(() {
       loading = true;
     });
-    if (_formkey.currentState.validate()) {
+    if (_foodformkey.currentState.validate()) {
       widget.foodAdderCallback(food);
     } else {
       setState(() {
